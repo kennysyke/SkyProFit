@@ -1,10 +1,10 @@
 import React from 'react';
 import * as Styled from './Styles';
 import yoga from '../../images/courses-mini/yoga-card.png';
-// import Newlogin from './newlogin';
-// import Newpas from './newpas';
+import {Newlogin} from '../form/newlogin';
+import {Newpas} from '../form/newpas';
 
-function Profile() {
+export function Profile() {
   
   return (
     <div >
@@ -46,11 +46,9 @@ function Profile() {
       </Styled.ContainerCourse>
      
 
-      {/* <Newlogin/>
-      <Newpas/> */}
+      <Newlogin/>
+      <Newpas/>
     </div>
     
     )
 }
-
-export default Profile;

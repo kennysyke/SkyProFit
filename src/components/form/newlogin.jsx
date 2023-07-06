@@ -1,7 +1,8 @@
 import React from 'react';
 import * as Styled from './Styles';
 
-function Newlogin() {
+
+export function Newlogin() {
   return (
     <Styled.ContainerForm>
         <Styled.NewDataForms>

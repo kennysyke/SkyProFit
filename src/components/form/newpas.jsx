@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './Styles';
 
-function Newpas() {
+export function Newpas() {
   return (
         <Styled.ContainerForm>
             <Styled.NewDataForms>
