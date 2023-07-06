@@ -20,5 +20,3 @@ function Newpas() {
         </Styled.ContainerForm>
   )
 }
-
-export default Newpas;

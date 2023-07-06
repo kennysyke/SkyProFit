@@ -19,5 +19,3 @@ function Newlogin() {
 
 )
 }
-
-export default Newlogin;

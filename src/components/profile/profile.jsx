@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Styled from './Styles';
+import yoga from '../../images/courses-mini/yoga-card.png';
 // import Newlogin from './newlogin';
 // import Newpas from './newpas';
 
@@ -25,7 +26,23 @@ function Profile() {
      
       <Styled.ContainerCourse>
         <h1>Мои курсы</h1>
+        <Styled.CourseBox>
+        <img
+                  src={yoga}
+                  alt="Course yoga"
+                />
+                <img
+                  src={yoga}
+                  alt="Course yoga"
+                />
+                <img
+                  src={yoga}
+                  alt="Course yoga"
+                />
 
+        </Styled.CourseBox>
+        
+       
       </Styled.ContainerCourse>
      
 

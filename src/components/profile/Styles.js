@@ -111,3 +111,12 @@ export const ContainerCourse = styled.div`
     align-items: flex-start;
     flex-direction: column;
 `;
+
+export const CourseBox = styled.div`
+    max-width: 1160px;
+    margin: 0px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+`;
