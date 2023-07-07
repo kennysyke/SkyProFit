@@ -1,56 +1,46 @@
-import React from 'react';
-import * as Styled from './Styles';
-import yoga from '../../images/courses-mini/yoga-card.png';
-// import Newlogin from './newlogin';
-// import Newpas from './newpas';
+import React from "react";
+import * as Styled from "./Styles";
+import { Link } from "react-router-dom";
+import bodyflex from "../../images/courses-mini/bodyflex-card.png";
+import stretching from "../../images/courses-mini/stretching-card.png";
+import yoga from "../../images/courses-mini/yoga-card.png";
+import logoBlack from "../../images/icons/logo-black.svg";
+import { Newlogin } from "../form/data change/newlogin";
+import { Newpas } from "../form/data change/newpas";
 
-function Profile() {
-  
+export function Profile() {
   return (
-    <div >
+    <div>
       <Styled.ContainerProfile>
+        <Styled.HeaderContainer>
+          <Styled.Logo src={logoBlack} alt="logo" />
+        </Styled.HeaderContainer>
         <h1>Мой профиль</h1>
         <p>Логин: sergey.petrov96</p>
         <p>Пароль: 4fkhdj880d</p>
         <Styled.BtnBox>
-        <Styled.BtnChange>
-        Редактировать логин
-        </Styled.BtnChange>
-        <Styled.BtnChange>
-        Редактировать пароль
-        </Styled.BtnChange>
+          <Styled.BtnChange>Редактировать логин</Styled.BtnChange>
+          <Styled.BtnChange>Редактировать пароль</Styled.BtnChange>
         </Styled.BtnBox>
-       
-
       </Styled.ContainerProfile>
-     
-      <Styled.ContainerCourse>
-        <h1>Мои курсы</h1>
-        <Styled.CourseBox>
-        <img
-                  src={yoga}
-                  alt="Course yoga"
-                />
-                <img
-                  src={yoga}
-                  alt="Course yoga"
-                />
-                <img
-                  src={yoga}
-                  alt="Course yoga"
-                />
 
-        </Styled.CourseBox>
-        
-       
-      </Styled.ContainerCourse>
-     
+      <h1>Мои курсы</h1>
+      <Styled.CoursesContainer>
+        <Link to="/">
+          <Styled.CourseCard src={yoga} alt="Course yoga" />
+        </Link>
 
-      {/* <Newlogin/>
-      <Newpas/> */}
+        <Link to="/">
+          <Styled.CourseCard src={stretching} alt="Course stretching" />
+        </Link>
+
+        <Link to="/">
+          <Styled.CourseCard src={bodyflex} alt="Course bodyflex" />
+        </Link>
+      </Styled.CoursesContainer>
+
+      <Newlogin />
+      <Newpas />
     </div>
-    
-    )
+  );
 }
-
-export default Profile;

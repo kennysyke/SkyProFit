@@ -1,31 +1,40 @@
 import styled from 'styled-components';
 
+export const ContainerForm = styled.div`
+    max-width: 1920px;
+    // height: 100vh;
+    background-color: #f8f8ff;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    //временные отступы
+    margin-top: 25px;
+    padding: 10px;
+`;
+
 export const Logo = styled.img`
   width: 220px;
   height: 35px;
   flex-shrink: 0;
 `;
 
-export const HeaderContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding-top: 30px;
-  padding-bottom: 35px;
-`;
-
-export const ContainerForm = styled.div`
-    max-width: 1920px;
-    height: 100vh;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-`;
-
-export const NewDataForms = styled.div`
+export const NewLoginForm = styled.div`
     width: 366px;
-    height: 439px;
+    height: 331px;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+`;
+
+export const NewPasForm = styled.div`
+    width: 366px;
+    height: 400px;
     background: #ffffff;
     border-radius: 12px;
     display: flex;
@@ -116,19 +125,20 @@ export const BtnChange = styled.button`
     color: #ffffff;
 `;
 
-export const CourseCard = styled.img`
-  width: 360px;
-  height: 480px;
-  flex-shrink: 0;
-  border-radius: 29.998px;
-  background: #fff;
-  box-shadow: -10px 10px 15.998822212219238px 0px rgba(0, 0, 0, 0.1),
-    10px -10px 16px 0px rgba(0, 0, 0, 0.1);
+export const ContainerCourse = styled.div`
+    max-width: 1920px;
+    margin: 0px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 `;
 
-export const CoursesContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding-bottom: 35px;
+export const CourseBox = styled.div`
+    max-width: 1160px;
+    margin: 0px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
 `;
