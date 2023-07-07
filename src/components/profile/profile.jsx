@@ -1,6 +1,9 @@
 import React from 'react';
 import * as Styled from './Styles';
-import yoga from '../../images/courses-mini/yoga-card.png';
+import { Link } from 'react-router-dom';
+import bodyflex from "../../images/courses-mini/bodyflex-card.png";
+import stretching from "../../images/courses-mini/stretching-card.png";
+import yoga from "../../images/courses-mini/yoga-card.png";
 import {Newlogin} from '../form/newlogin';
 import {Newpas} from '../form/newpas';
 
@@ -24,26 +27,21 @@ export function Profile() {
 
       </Styled.ContainerProfile>
      
-      <Styled.ContainerCourse>
+     
         <h1>Мои курсы</h1>
-        <Styled.CourseBox>
-        <img
-                  src={yoga}
-                  alt="Course yoga"
-                />
-                <img
-                  src={yoga}
-                  alt="Course yoga"
-                />
-                <img
-                  src={yoga}
-                  alt="Course yoga"
-                />
+        <Styled.CoursesContainer>
+        <Link to="/">
+          <Styled.CourseCard src={yoga} alt="Course yoga" />
+        </Link>
 
-        </Styled.CourseBox>
-        
-       
-      </Styled.ContainerCourse>
+        <Link to="/">
+          <Styled.CourseCard src={stretching} alt="Course stretching" />
+        </Link>
+
+        <Link to="/">
+          <Styled.CourseCard src={bodyflex} alt="Course bodyflex" />
+        </Link>
+      </Styled.CoursesContainer>
      
 
       <Newlogin/>
