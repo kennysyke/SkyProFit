@@ -1,20 +1,27 @@
 import styled from 'styled-components';
 
-export const ContainerForm = styled.div`
+export const ContainerLoginForm = styled.div`
     max-width: 1920px;
-    // height: 100vh;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
+    background-color: #f8f8ff;
     display: flex;
     justify-content: space-around;
     align-items: center;
 `;
 
-export const NewDataForms = styled.div`
+export const Logo = styled.img`
+  width: 220px;
+  height: 35px;
+  flex-shrink: 0;
+  margin-bottom: 25px;
+`;
+
+export const LoginForms = styled.div`
     width: 366px;
     height: 439px;
     background: #ffffff;
-    border: 1px solid #000;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -22,30 +29,22 @@ export const NewDataForms = styled.div`
     justify-content: flex-end;
 }
 `;
-
-export const LabelForm = styled.div`
-width: 278.5px;
-height: 35px;
-}
-`;
-
 export const LoginInput = styled.input`
-width: 278.5px;
-height: 35px;
-border: none;
-border-bottom: 1px solid #D0CECE;;
-margin-bottom: 60px;
-padding-bottom: 8px;
-::placeholder {       
-    color: #E1E1E1;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-}
+    width: 278.5px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid rgb(208, 206, 206);
+    margin-bottom: 38px;
+    padding-bottom: 8px;
+    ::placeholder {       
+        color: #E1E1E1;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
 }
 `;
-
 export const PasswordInput = styled.input`
 width: 278.5px;
 height: 35px;
@@ -62,8 +61,23 @@ padding-bottom: 8px;
 }
 }
 `;
-
-export const BtnSave = styled.button`
+export const PasswordInputRep = styled.input`
+width: 278.5px;
+height: 35px;
+border: none;
+border-bottom: 1px solid #D0CECE;;
+margin-bottom: 60px;
+padding-bottom: 8px;
+::placeholder {       
+    color: #E1E1E1;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+}
+`;
+export const BtnEnter = styled.button`
     width: 278px;
     height: 52px;
     background: #580ea2;
@@ -74,50 +88,19 @@ export const BtnSave = styled.button`
     line-height: 24px;
     color: #ffffff;
 `;
-
-export const ContainerProfile = styled.div`
-    max-width: 1920px;
-    margin: 0px auto;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-`;
-
-export const BtnBox = styled.div`
-    max-width: 1920px;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-`;
-
-export const BtnChange = styled.button`
+export const BtnRegistration = styled.button`
     width: 278px;
     height: 52px;
-    background: #580ea2;
+    border: 1px solid #d0cece;
+    background: #ffffff;
     border-radius: 46px;
-    margin-bottom: 20px;
+    margin-bottom: 47px;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
-    color: #ffffff;
+    color: #000000;
 `;
-
-export const ContainerCourse = styled.div`
-    max-width: 1920px;
-    margin: 0px auto;
-    position: relative;
+export const Navigation = styled.nav`
     display: flex;
-    align-items: flex-start;
     flex-direction: column;
-`;
-
-export const CourseBox = styled.div`
-    max-width: 1160px;
-    margin: 0px auto;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
 `;
