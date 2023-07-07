@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerForm = styled.div`
     max-width: 1920px;
-    height: 100vh;
+    // height: 100vh;
     margin: 0 auto;
     position: relative;
     display: flex;

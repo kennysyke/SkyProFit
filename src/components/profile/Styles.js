@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const Logo = styled.img`
+  width: 220px;
+  height: 35px;
+  flex-shrink: 0;
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 35px;
+`;
+
 export const ContainerForm = styled.div`
     max-width: 1920px;
     height: 100vh;
@@ -116,7 +129,6 @@ export const CourseCard = styled.img`
 export const CoursesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 40px;
   padding-bottom: 35px;
 `;

@@ -12,6 +12,9 @@ export function Profile() {
   return (
     <div >
       <Styled.ContainerProfile>
+      <Styled.HeaderContainer>
+          {/* <Styled.Logo src={logoBlack} alt="logo" /> */}
+    </Styled.HeaderContainer>
         <h1>Мой профиль</h1>
         <p>Логин: sergey.petrov96</p>
         <p>Пароль: 4fkhdj880d</p>
