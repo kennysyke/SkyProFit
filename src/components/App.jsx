@@ -3,7 +3,7 @@ import { AppRoutes } from "../routes";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
-  background: #271a58;
+  background: ${(props) => (props.isMainPage ? "#271a58" : "white")};
   width: 100%;
   min-height: 100%;
   overflow: hidden;
@@ -12,11 +12,10 @@ const StyledWrapper = styled.div`
 `;
 
 export function App() {
+  const isMainPage = window.location.pathname === "/";
   return (
-    <StyledWrapper>
+    <StyledWrapper isMainPage={isMainPage}>
       <AppRoutes />
     </StyledWrapper>
   );
 }
-
-
