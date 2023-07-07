@@ -30,7 +30,9 @@ export function Center() {
           <Styled.CourseCard src={bodyflex} alt="Course bodyflex" />
         </Link>
       </Styled.CoursesContainer>
-      <Styled.BtnUp>Наверх↑</Styled.BtnUp>
+      <Styled.ButtonContainer>
+        <Styled.BtnUp>Наверх↑</Styled.BtnUp>
+      </Styled.ButtonContainer>
     </Styled.CenterContainer>
   );
 }
