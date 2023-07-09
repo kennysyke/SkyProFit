@@ -1,20 +1,17 @@
 import { Center } from "../../components/main/center";
-import { Header } from "../../components/main/header";
+import { Header } from "../../components/main/header/header";
 import { Title } from "../../components/main/title";
+import * as Styled from "./styles";
 
-import styled from "styled-components";
 
-const StyledContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`;
+
 
 export const MainPage = () => {     
     return (
-      <StyledContainer>
+      <Styled.StyledContainer>
         <Header />
         <Title />
         <Center />
-      </StyledContainer>
+      </Styled.StyledContainer>
     );
   }

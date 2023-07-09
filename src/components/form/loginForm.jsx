@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import * as Styled from "./Styles";
-import logoBlack from "../../images/icons/logo-black.svg";
+import { Logo } from "../main/header/logo";
+import { ButtonForm } from "./ButtonForm"
+
 
 export const LoginForm = () => {
   const navigate = useNavigate();
@@ -16,11 +18,11 @@ export const LoginForm = () => {
   return (
     <Styled.ContainerLoginForm>
       <Styled.LoginForms>
-        <Styled.Logo src={logoBlack} alt="logo" />
+      <Logo/>
         <Styled.LoginInput type="email" placeholder="Email" />
         <Styled.PasswordInput type="password" placeholder="Пароль" />
         <Styled.Navigation>
-          <Styled.BtnEnter onClick={handleLogin}>Войти</Styled.BtnEnter>
+          <ButtonForm onClick={handleLogin} text="Войти"/>
           <Styled.BtnRegistration onClick={handleRegistration}>
             Зарегистрироваться
           </Styled.BtnRegistration>

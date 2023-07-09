@@ -1,11 +1,12 @@
 import * as Styled from "./Styles";
-import logoBlack from "../../images/icons/logo-black.svg";
+import { Logo } from "../main/header/logo";
+import { ButtonForm } from "./ButtonForm"
 
 export const RegistrationForm = () => {
   return (
     <Styled.ContainerLoginForm>
       <Styled.LoginForms>
-        <Styled.Logo src={logoBlack} alt="logo" />
+      <Logo/>
         <Styled.LoginInput type="email" placeholder="Email" />
         <Styled.PasswordInput type="password" placeholder="Пароль" />
         <Styled.PasswordInputRep
@@ -13,7 +14,7 @@ export const RegistrationForm = () => {
           placeholder="Повторите Пароль"
         />
         <Styled.Navigation>
-          <Styled.BtnEnter>Зарегистрироваться</Styled.BtnEnter>
+        <ButtonForm text="Зарегистрироваться"/>
         </Styled.Navigation>
       </Styled.LoginForms>
     </Styled.ContainerLoginForm>
