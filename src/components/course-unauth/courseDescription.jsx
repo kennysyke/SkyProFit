@@ -1,15 +1,13 @@
 import React from 'react';
-import yoga from '../../images/courses-wide/yoga.png';
-import phone from "../../images/phone.png";
+import { CourseBanner } from './courseBanner';
 
 import * as Styled from "./styles";
-
+import { getResponse } from '../API/API';
 export function CourseDescription() {
+  getResponse()
   return (
     <div>
-      <div>
-        <Styled.LargeImage src={yoga} alt="Course yoga" />
-      </div>
+      <CourseBanner src="images/courses-wide/yoga.png" alt='Course yoga'/>
       <div>
         <Styled.TitleLarge>Подойдет для вас, если:</Styled.TitleLarge>
         <Styled.StyledOrderedList>
@@ -55,7 +53,7 @@ export function CourseDescription() {
           <Styled.ContactBtn>Записаться на тренировку</Styled.ContactBtn>
         </Styled.LeftContainer>
         <div>
-          <Styled.ContactImage src={phone} alt="phone in the hand" />
+          <Styled.ContactImage src="images/phone.png" alt="phone in the hand" />
         </div>
       </Styled.ContactContainer>
     </div>

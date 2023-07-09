@@ -50,11 +50,11 @@ export const StyledListItem = styled.li`
     content: counter(my-counter);
     font-weight: bold;
     font-size: 24px;
-    border-radius: 1202.287px;
+    border-radius: 50%;
     background: #c7e957;
-    width: 67px;
-    height: 67px;
-    padding: 10.687px;
+    width: 100px;
+    height: 50px;
+    padding: 11px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,4 +116,7 @@ export const ContactText = styled.h2`
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
+`;
+export const CourseBannerContent = styled.div`
+ 
 `;

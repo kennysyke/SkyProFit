@@ -1,10 +1,6 @@
 import React from "react";
 import * as Styled from "./Styles";
 import { Link } from "react-router-dom";
-import bodyflex from "../../images/courses-mini/bodyflex-card.png";
-import stretching from "../../images/courses-mini/stretching-card.png";
-import yoga from "../../images/courses-mini/yoga-card.png";
-import logoBlack from "../../images/icons/logo-black.svg";
 import { Newlogin } from "../form/data change/newlogin";
 import { Newpas } from "../form/data change/newpas";
 
@@ -13,7 +9,7 @@ export function Profile() {
     <div>
       <Styled.ContainerProfile>
         <Styled.HeaderContainer>
-          <Styled.Logo src={logoBlack} alt="logo" />
+          <Styled.Logo src="images/icons/logo-black.svg" alt="logo" />
         </Styled.HeaderContainer>
         <h1>Мой профиль</h1>
         <p>Логин: sergey.petrov96</p>
@@ -27,15 +23,15 @@ export function Profile() {
       <h1>Мои курсы</h1>
       <Styled.CoursesContainer>
         <Link to="/">
-          <Styled.CourseCard src={yoga} alt="Course yoga" />
+          <Styled.CourseCard src="images/courses-mini/yoga-card.png" alt="Course yoga" />
         </Link>
 
         <Link to="/">
-          <Styled.CourseCard src={stretching} alt="Course stretching" />
+          <Styled.CourseCard src="images/courses-mini/stretching-card.png" alt="Course stretching" />
         </Link>
 
         <Link to="/">
-          <Styled.CourseCard src={bodyflex} alt="Course bodyflex" />
+          <Styled.CourseCard src="images/courses-mini/bodyflex-card.png" alt="Course bodyflex" />
         </Link>
       </Styled.CoursesContainer>
 

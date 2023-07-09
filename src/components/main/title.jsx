@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from "./styles";
-import stickerImage from "../../images/main-page-sticker.png";
+
 export function Title() {
   return (
     <Styled.TitleContainer>
@@ -9,7 +9,7 @@ export function Title() {
         <Styled.TitleLarge>
           Начните заниматься спортом и улучшите качество жизни
         </Styled.TitleLarge>
-        <Styled.StickerImage src={stickerImage} alt="Sticker image" />
+        <Styled.StickerImage src="images/main-page-sticker.png" alt="Sticker image" />
       </Styled.TitleDiv>
     </Styled.TitleContainer>
   );

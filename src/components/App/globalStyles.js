@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -7,13 +7,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
   }
   
   *:before,
   *:after {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+     box-sizing: border-box;
   }
   
   a,
@@ -40,8 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     width: 100%;
     height: 100%;
-    font-family: 'StratosSkyeng', sans-serif;
-    color: white;
+    font-family: 'StratosSkyeng', sans-serif;   
 
   }
 
