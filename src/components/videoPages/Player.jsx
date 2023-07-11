@@ -4,15 +4,15 @@ import * as Styled from "./styles";
 
 export const Player = () => {
     return (
-        <Styled.Player>
+      <Styled.Player>
         <ReactPlayer
           url="<https://www.youtube.com/watch?v=oqe98Dxivns>"
-          width="1169px"
-          height="639px"
+          width="100%"
+          height="100%"
           controls
         />
-        </Styled.Player>
-      );
+      </Styled.Player>
+    );
       
 }
 
