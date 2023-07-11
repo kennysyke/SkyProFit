@@ -1,10 +1,21 @@
 import React from 'react';
+import { useParams} from 'react-router-dom';
+import { useGetCoursesQuery } from '../../redux/fitnesApiBase';
 import { CourseBanner } from './courseBanner';
-
 import * as Styled from "./styles";
-import { getResponse } from '../API/API';
+
+
 export function CourseDescription() {
-  getResponse()
+  const {data, isLoading}=useGetCoursesQuery()  
+  const params = useParams();
+   
+  
+ if(isLoading){
+  return <h1>Идет подгрзука данных</h1>
+ }
+
+  //  const courses = data.find((course) => course._id === params.id); 
+  console.log(data)
   return (
     <div>
       <CourseBanner src="images/courses-wide/yoga.png" alt='Course yoga'/>
