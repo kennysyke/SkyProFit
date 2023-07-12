@@ -7,7 +7,7 @@ export function Header() {
   const isMainPage = window.location.pathname === "/";
   return (
     <Styled.HeaderContainer>
-      <Logo/>
+      <Logo src= {isMainPage ? "images/icons/logo.svg" : "images/icons/logo-black.svg"}   />
       {isMainPage ? <Button/> : ''}     
     </Styled.HeaderContainer>
   );

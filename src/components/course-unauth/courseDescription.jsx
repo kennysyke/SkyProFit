@@ -1,46 +1,42 @@
 import React from 'react';
+import { useParams} from 'react-router-dom';
+import { useGetCoursesQuery } from '../../redux/fitnesApiBase';
 import { CourseBanner } from './courseBanner';
-
 import * as Styled from "./styles";
-import { getResponse } from '../API/API';
+
 export function CourseDescription() {
-  getResponse()
+  const {data, isLoading}=useGetCoursesQuery()  
+  const params = useParams(); 
+
+  if(isLoading){
+     return <h1>Идет подгрзука данных</h1>
+     }
+  const course = Object.values(data)
+  const courses = course.find((cours) => cours._id === params.id); 
+  
+  console.log(courses)
   return (
     <div>
       <CourseBanner src="images/courses-wide/yoga.png" alt='Course yoga'/>
       <div>
         <Styled.TitleLarge>Подойдет для вас, если:</Styled.TitleLarge>
         <Styled.StyledOrderedList>
-          <Styled.StyledListItem>
-            Давно хотели попробовать йогу, но не решались начать.
-          </Styled.StyledListItem>
-          <Styled.StyledListItem>
-            Хотите укрепить позвоночник, избавиться от болей в спине и суставах.
-          </Styled.StyledListItem>
-          <Styled.StyledListItem>
-            Ищете активность, полезную для тела и души.
-          </Styled.StyledListItem>
+        {courses.reasons.map((res, i) => ( 
+          <Styled.StyledListItem key={i}>{res} </Styled.StyledListItem>
+          ))}    
         </Styled.StyledOrderedList>
       </div>
       <div>
         <Styled.TitleLarge>Направления:</Styled.TitleLarge>
         <Styled.StyledTwoColumnList>
-          <Styled.TextListSmall>Йога для новичков</Styled.TextListSmall>
-          <Styled.TextListSmall>Классическая йога</Styled.TextListSmall>
-          <Styled.TextListSmall>Йогатерапия</Styled.TextListSmall>
-          <Styled.TextListSmall>Кундалини-йога </Styled.TextListSmall>
-          <Styled.TextListSmall>Хатха-йога</Styled.TextListSmall>
-          <Styled.TextListSmall>Аштанга-йога</Styled.TextListSmall>
+          {courses.directions.map((direct, i) => (               
+            <Styled.TextListSmall key={i}>{direct}</Styled.TextListSmall>                              
+            ))}         
         </Styled.StyledTwoColumnList>
       </div>
 
       <div>
-        <Styled.DetailsText>
-          Благодаря комплексному воздействию упражнений происходит проработка
-          всех групп мышц, тренировка суставов, улучшается циркуляция крови.
-          Кроме того, упражнения дарят отличное настроение, заряжают бодростью и
-          помогают противостоять стрессам.
-        </Styled.DetailsText>
+        <Styled.DetailsText>{courses.details}</Styled.DetailsText>
       </div>
 
       <Styled.ContactContainer>
