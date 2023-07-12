@@ -1,46 +1,64 @@
-import React from 'react';
-import { CourseBanner } from './courseBanner';
+import React, { useEffect, useState } from "react";
+import { CourseBanner } from "./courseBanner";
+import { useParams } from "react-router-dom";
 
 import * as Styled from "./styles";
-import { getResponse } from '../API/API';
+import { getResponse } from "../API/API";
 export function CourseDescription() {
-  getResponse()
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getResponse().then((responseData) => {
+      setData(responseData);
+    });
+  }, []);
+
+  const params = useParams();
+
+  const id = params.id;
+  console.log(id);
+
+  const filteredData = data.filter((item) => item._id === id);
+
+  console.log(data);
+
+  console.log(filteredData);
+  console.log(filteredData[0].reasons);
+  // console.log(data.map((course) => course.reasons));
   return (
     <div>
-      <CourseBanner src="images/courses-wide/yoga.png" alt='Course yoga'/>
+      <CourseBanner src="images/courses-wide/yoga.png" alt="Course yoga" />
       <div>
         <Styled.TitleLarge>Подойдет для вас, если:</Styled.TitleLarge>
         <Styled.StyledOrderedList>
-          <Styled.StyledListItem>
-            Давно хотели попробовать йогу, но не решались начать.
-          </Styled.StyledListItem>
-          <Styled.StyledListItem>
+          {filteredData.map((course) => (
+            <Styled.StyledListItem>{course.reasons}</Styled.StyledListItem>
+          ))}
+
+          {/* <Styled.StyledListItem>
             Хотите укрепить позвоночник, избавиться от болей в спине и суставах.
           </Styled.StyledListItem>
           <Styled.StyledListItem>
             Ищете активность, полезную для тела и души.
-          </Styled.StyledListItem>
+          </Styled.StyledListItem> */}
         </Styled.StyledOrderedList>
       </div>
       <div>
         <Styled.TitleLarge>Направления:</Styled.TitleLarge>
         <Styled.StyledTwoColumnList>
-          <Styled.TextListSmall>Йога для новичков</Styled.TextListSmall>
-          <Styled.TextListSmall>Классическая йога</Styled.TextListSmall>
+          {filteredData.map((course) => (
+            <Styled.TextListSmall>{course.directions}</Styled.TextListSmall>
+          ))}
+          {/* <Styled.TextListSmall>Классическая йога</Styled.TextListSmall>
           <Styled.TextListSmall>Йогатерапия</Styled.TextListSmall>
           <Styled.TextListSmall>Кундалини-йога </Styled.TextListSmall>
           <Styled.TextListSmall>Хатха-йога</Styled.TextListSmall>
-          <Styled.TextListSmall>Аштанга-йога</Styled.TextListSmall>
+          <Styled.TextListSmall>Аштанга-йога</Styled.TextListSmall> */}
         </Styled.StyledTwoColumnList>
       </div>
 
       <div>
-        <Styled.DetailsText>
-          Благодаря комплексному воздействию упражнений происходит проработка
-          всех групп мышц, тренировка суставов, улучшается циркуляция крови.
-          Кроме того, упражнения дарят отличное настроение, заряжают бодростью и
-          помогают противостоять стрессам.
-        </Styled.DetailsText>
+        <Styled.DetailsText>{filteredData[0].details}</Styled.DetailsText>
       </div>
 
       <Styled.ContactContainer>
