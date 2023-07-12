@@ -2,8 +2,7 @@ import React from "react";
 import * as Styled from "./styles";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Newlogin } from "../form/data change/newlogin";
-import { Newpas } from "../form/data change/newpas";
+
 
 export function Profile() {
   const navigate = useNavigate();
@@ -45,8 +44,6 @@ export function Profile() {
         </Link>
       </Styled.CoursesContainer>
 
-      <Newlogin />
-      <Newpas />
     </div>
   );
 }
