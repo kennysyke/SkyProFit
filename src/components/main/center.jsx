@@ -5,7 +5,15 @@ import * as Styled from "./styles";
 import { useGetAllCourses } from "../../services/api";
 
 export function Center() {
-  const data = useGetAllCourses();
+  const { data, error, isLoading } = useGetAllCourses(); // Use object destructuring to access data, error, and isLoading
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   console.log(data);
   console.log(data.map((course) => course.reasons));
