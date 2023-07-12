@@ -1,10 +1,20 @@
 import React from "react";
-import * as Styled from "./Styles";
+import * as Styled from "./styles";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Newlogin } from "../form/data change/newlogin";
 import { Newpas } from "../form/data change/newpas";
 
 export function Profile() {
+  const navigate = useNavigate();
+
+  const handleLoginChange = () => {
+    navigate("/newlogin");
+  };
+
+  function handlePasChange() {
+    navigate("/newpas");
+  }
   return (
     <div>
       <Styled.ContainerProfile>
@@ -15,8 +25,8 @@ export function Profile() {
         <p>Логин: sergey.petrov96</p>
         <p>Пароль: 4fkhdj880d</p>
         <Styled.BtnBox>
-          <Styled.BtnChange>Редактировать логин</Styled.BtnChange>
-          <Styled.BtnChange>Редактировать пароль</Styled.BtnChange>
+          <Styled.BtnChange onClick={handleLoginChange}>Редактировать логин</Styled.BtnChange>
+          <Styled.BtnChange onClick={handlePasChange}>Редактировать пароль</Styled.BtnChange>
         </Styled.BtnBox>
       </Styled.ContainerProfile>
 

@@ -1,9 +1,10 @@
 import { RegistrationForm } from "../../components/form/registerForm";
+import * as Styled from "./styles";
 
 export const Registration = () => {     
     return (
-      <div>   
+      <Styled.Wrapper>   
         <RegistrationForm/>    
-      </div>
+      </Styled.Wrapper>
     );
   }

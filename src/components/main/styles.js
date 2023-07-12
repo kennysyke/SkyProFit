@@ -4,6 +4,7 @@ export const Logo = styled.img`
   width: 220px;
   height: 35px;
   flex-shrink: 0;
+  margin-bottom: 25px;
 `;
 
 export const BtnLogin = styled.button`
