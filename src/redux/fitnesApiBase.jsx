@@ -10,7 +10,7 @@ export const fitnesApi = createApi({
   
   endpoints: (builder) => ({
     getCourses: builder.query({
-      query: () => '/courses/ab1c3f.json',             
+      query: () => '/courses.json',             
     }),  
     
   }),

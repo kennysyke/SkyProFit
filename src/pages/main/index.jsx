@@ -6,7 +6,7 @@ import * as Styled from "./styles";
 export const MainPage = () => {     
     return (
       <Styled.StyledContainer>
-        <Header />
+        <Header/>
         <Title />
         <Center />
       </Styled.StyledContainer>
