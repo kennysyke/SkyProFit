@@ -101,7 +101,7 @@ export const ContainerProgressBar2 = styled.div`
     top: 0;
     left: 0;
     height: 100%;
-    width: 75%;
+    width: ${(props) => props.progressWidth};
     background: #ff6d00;
   }
 `;
@@ -121,7 +121,7 @@ export const ContainerProgressBar3 = styled.div`
     top: 0;
     left: 0;
     height: 100%;
-    width: 75%;
+    width: ${(props) => props.progressWidth};
     background: #9a48f1;
   }
 `;
