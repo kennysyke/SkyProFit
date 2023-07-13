@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { fitnesApi } from "./fitnesApiBase";
+import modalSliceReducer from "./modal-store";
 
+export const store = configureStore({
+  reducer: {
+    [fitnesApi.reducerPath]: fitnesApi.reducer,
+    modalWindow: modalSliceReducer,
+  },
 
-
-export const store = configureStore ({
-
-    reducer: {        
-        [fitnesApi.reducerPath]: fitnesApi.reducer,              
-    },
-    
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(fitnesApi.middleware)
-})
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(fitnesApi.middleware),
+});
