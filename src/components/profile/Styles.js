@@ -13,6 +13,24 @@ export const HeaderContainer = styled.div`
   padding-bottom: 35px;
 `;
 
+export const ProfileTitle = styled.h1`
+    color: #000;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 56px;
+    padding-bottom: 40px;
+`;
+
+export const ProfileSubTitle = styled.p`
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  padding-bottom: 40px;
+`;
+
 export const ContainerForm = styled.div`
     max-width: 1920px;
     height: 100vh;
@@ -139,6 +157,5 @@ export const CourseCard = styled.img`
 export const CoursesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  padding-bottom: 35px;
+  width: 1160px;
 `;

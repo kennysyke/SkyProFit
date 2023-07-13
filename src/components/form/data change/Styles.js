@@ -2,16 +2,13 @@ import styled from 'styled-components';
 
 export const ContainerForm = styled.div`
     max-width: 1920px;
-    // height: 100vh;
-    background-color: #f8f8ff;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
+    background-color:#D0CECE;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    //временные отступы
-    margin-top: 25px;
-    padding: 10px;
 `;
 
 export const NewLoginForm = styled.div`
