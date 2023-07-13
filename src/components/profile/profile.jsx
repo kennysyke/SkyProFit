@@ -2,6 +2,7 @@ import React from "react";
 import * as Styled from "./styles";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Logo } from "../main/header/logo";
 
 
 export function Profile() {
@@ -18,7 +19,7 @@ export function Profile() {
     <div>
       <Styled.ContainerProfile>
         <Styled.HeaderContainer>
-          <Styled.Logo src="images/icons/logo-black.svg" alt="logo" />
+        <Logo/>
         </Styled.HeaderContainer>
         <h1>Мой профиль</h1>
         <p>Логин: sergey.petrov96</p>

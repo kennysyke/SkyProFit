@@ -114,6 +114,16 @@ export const BtnChange = styled.button`
     font-size: 18px;
     line-height: 24px;
     color: #ffffff;
+    :hover {
+        background:#3F007D;
+        color: #ffffff;
+        cursor: pointer;
+    }
+    :active {
+        background:#271A58;
+        color: #ffffff;
+        cursor: pointer;
+    }
 `;
 
 export const CourseCard = styled.img`
