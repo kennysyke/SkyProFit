@@ -14,12 +14,6 @@ export const ContainerForm = styled.div`
     padding: 10px;
 `;
 
-export const Logo = styled.img`
-  width: 220px;
-  height: 35px;
-  flex-shrink: 0;
-`;
-
 export const NewLoginForm = styled.div`
     width: 366px;
     height: 331px;

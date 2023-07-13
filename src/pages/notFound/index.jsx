@@ -1,7 +1,9 @@
+import * as Styled from "./styles";
+
 export const NotFound = () => {     
     return (
-      <div>
-        <h1>NotFound</h1>    
-      </div>
+      <Styled.Wrapper>
+        <h1>Page not found...</h1>    
+      </Styled.Wrapper>
     );
   }

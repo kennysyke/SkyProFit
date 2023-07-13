@@ -1,4 +1,4 @@
-import * as Styled from "./Styles";
+import * as Styled from "./styles";
 import { Logo } from "../main/header/logo";
 import { ButtonForm } from "./ButtonForm"
 

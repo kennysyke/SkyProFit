@@ -23,6 +23,9 @@ export const ExercisesList = styled.ol`
   list-style-type: disc;
   color: black;
   padding-bottom: 40px;
+  margin-left: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 export const ExercisesListItems = styled.li`
   color: #000;

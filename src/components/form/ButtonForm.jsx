@@ -1,5 +1,5 @@
 
-import * as Styled from "./Styles";
+import * as Styled from "./styles";
 
 
 

@@ -5,17 +5,10 @@ export const ContainerLoginForm = styled.div`
     height: 100vh;
     margin: 0 auto;
     position: relative;
-    background-color: #f8f8ff;
+    background-color:#D0CECE;
     display: flex;
     justify-content: space-around;
     align-items: center;
-`;
-
-export const Logo = styled.img`
-  width: 220px;
-  height: 35px;
-  flex-shrink: 0;
-  margin-bottom: 25px;
 `;
 
 export const LoginForms = styled.div`
@@ -82,7 +75,7 @@ export const BtnEnter = styled.button`
     height: 52px;
     background: #580ea2;
     border-radius: 46px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;

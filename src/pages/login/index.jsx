@@ -1,9 +1,10 @@
 import { LoginForm } from "../../components/form/loginForm";
+import * as Styled from "./styles";
 
 export const Login = () => {     
     return (
-      <div>
+      <Styled.Wrapper>
         <LoginForm/>   
-      </div>
+      </Styled.Wrapper>
     );
   }
