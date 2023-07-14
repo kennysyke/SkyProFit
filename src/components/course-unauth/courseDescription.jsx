@@ -1,13 +1,16 @@
 import React from 'react';
-import { CourseBanner } from './courseBanner';
+// import { CourseBanner } from './courseBanner';
 
 import * as Styled from "./styles";
 import { getResponse } from '../API/API';
 export function CourseDescription() {
   getResponse()
   return (
-    <div>
-      <CourseBanner src="images/courses-wide/yoga.png" alt='Course yoga'/>
+    <Styled.CourseContent>
+      <Styled.CourseBannerContent>
+        <Styled.TitleCard>Йога</Styled.TitleCard>
+        {/* <CourseBanner src="images/courses-wide/skillcard.png" alt='Course card'/> */}
+      </Styled.CourseBannerContent>
       <div>
         <Styled.TitleLarge>Подойдет для вас, если:</Styled.TitleLarge>
         <Styled.StyledOrderedList>
@@ -56,6 +59,6 @@ export function CourseDescription() {
           <Styled.ContactImage src="images/phone.png" alt="phone in the hand" />
         </div>
       </Styled.ContactContainer>
-    </div>
+    </Styled.CourseContent>
   );
 }

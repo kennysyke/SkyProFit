@@ -1,5 +1,23 @@
 import styled from "styled-components";
 
+export const CourseContent = styled.div` 
+  width: 100%;
+  min-height: 100%;
+`;
+
+export const TitleCard = styled.h2`
+  color: #000;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 72px;
+  padding-bottom: 40px;
+  padding-top: 75px;
+  padding-right: 50px;
+  padding-left: 50px;
+`;
+
+
 export const TitleLarge = styled.h1`
   color: #000;
   font-size: 40px;
@@ -118,5 +136,9 @@ export const ContactText = styled.h2`
   line-height: 40px;
 `;
 export const CourseBannerContent = styled.div`
- 
+  width: 1160px;
+  height: 310px;
+  background-image: url(images/courses-wide/skillcard.png);
+  margin-right: 20px;
+  margin-left: 20px;
 `;
