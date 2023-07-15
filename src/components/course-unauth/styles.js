@@ -139,4 +139,5 @@ export const CourseBannerContent = styled.div`
   width: 1160px;
   height: 310px;
   background-image: url(images/courses-wide/yoga.png);
+  border-radius: 20px;
 `;
