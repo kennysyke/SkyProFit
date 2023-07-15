@@ -20,7 +20,7 @@ export const NewLoginForm = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-}
+
 `;
 
 export const NewPasForm = styled.div`
@@ -32,13 +32,13 @@ export const NewPasForm = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-}
+
 `;
 
 export const LabelForm = styled.div`
 width: 278.5px;
 height: 35px;
-}
+
 `;
 
 export const LoginInput = styled.input`
@@ -55,7 +55,7 @@ padding-bottom: 8px;
     font-size: 18px;
     line-height: 24px;
 }
-}
+
 `;
 
 export const PasswordInput = styled.input`
@@ -72,7 +72,7 @@ padding-bottom: 8px;
     font-size: 18px;
     line-height: 24px;
 }
-}
+
 `;
 
 export const BtnSave = styled.button`

@@ -5,14 +5,15 @@ import {BrowserRouter} from "react-router-dom";
 import { store } from './redux/store';
 import { App } from './components/App/App';
 import { GlobalStyle } from "./components/App/globalStyles";
+import './firebase'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <Provider store = {store}>
-    <BrowserRouter>
+  <BrowserRouter>
+    <Provider store = {store}>    
       <GlobalStyle />
-      <App />
-    </BrowserRouter>
-  </Provider>
+      <App />    
+    </Provider>
+  </BrowserRouter>
 );
