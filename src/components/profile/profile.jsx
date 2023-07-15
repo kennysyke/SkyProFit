@@ -2,6 +2,7 @@ import React from "react";
 import * as Styled from "./styles";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Logo } from "../main/header/logo";
 
 
 export function Profile() {
@@ -18,18 +19,18 @@ export function Profile() {
     <div>
       <Styled.ContainerProfile>
         <Styled.HeaderContainer>
-          <Styled.Logo src="images/icons/logo-black.svg" alt="logo" />
+        <Logo/>
         </Styled.HeaderContainer>
-        <h1>Мой профиль</h1>
-        <p>Логин: sergey.petrov96</p>
-        <p>Пароль: 4fkhdj880d</p>
+        <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
+        <Styled.ProfileSubTitle>Логин: sergey.petrov96</Styled.ProfileSubTitle>
+        <Styled.ProfileSubTitle>Пароль: 4fkhdj880d</Styled.ProfileSubTitle>
         <Styled.BtnBox>
           <Styled.BtnChange onClick={handleLoginChange}>Редактировать логин</Styled.BtnChange>
           <Styled.BtnChange onClick={handlePasChange}>Редактировать пароль</Styled.BtnChange>
         </Styled.BtnBox>
       </Styled.ContainerProfile>
 
-      <h1>Мои курсы</h1>
+      <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
         <Link to="/">
           <Styled.CourseCard src="images/courses-mini/yoga-card.png" alt="Course yoga" />
