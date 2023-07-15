@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CourseContent = styled.div` 
-  width: 100%;
+  width: 1160px;
   min-height: 100%;
 `;
 

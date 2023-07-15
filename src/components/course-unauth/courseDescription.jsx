@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams} from 'react-router-dom';
 import { useGetCoursesQuery } from '../../redux/fitnesApiBase';
-import { CourseBanner } from './courseBanner';
+import { ContactContainer } from './contactContainer';
 import * as Styled from "./styles";
 
 export function CourseDescription() {
@@ -19,7 +19,6 @@ export function CourseDescription() {
     <Styled.CourseContent>
       <Styled.CourseBannerContent>
         <Styled.TitleCard>Йога</Styled.TitleCard>
-        {/* <CourseBanner src="images/courses-wide/skillcard.png" alt='Course card'/> */}
       </Styled.CourseBannerContent>
       <div>
         <Styled.TitleLarge>Подойдет для вас, если:</Styled.TitleLarge>
@@ -41,20 +40,9 @@ export function CourseDescription() {
       <div>
         <Styled.DetailsText>{courses.details}</Styled.DetailsText>
       </div>
+      <ContactContainer/>
 
-      <Styled.ContactContainer>
-        <Styled.LeftContainer>
-          <Styled.ContactText>
-            Оставьте заявку на пробное занятие, мы свяжемся с вами, поможем с
-            выбором направления и тренера, с которым тренировки принесут
-            здоровье и радость!
-          </Styled.ContactText>
-          <Styled.ContactBtn>Записаться на тренировку</Styled.ContactBtn>
-        </Styled.LeftContainer>
-        <div>
-          <Styled.ContactImage src="images/phone.png" alt="phone in the hand" />
-        </div>
-      </Styled.ContactContainer>
+    
     </Styled.CourseContent>
   );
 }
