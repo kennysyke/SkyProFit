@@ -1,8 +1,10 @@
 import React from 'react';
 // import { CourseBanner } from './courseBanner';
-
+import { useParams} from 'react-router-dom';
+import { useGetCoursesQuery } from '../../redux/fitnesApiBase';
 import * as Styled from "./styles";
 import { getResponse } from '../API/API';
+
 export function CourseDescription() {
   getResponse()
   return (
