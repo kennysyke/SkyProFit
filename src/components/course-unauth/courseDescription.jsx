@@ -5,7 +5,7 @@ import { ContactContainer } from './contactContainer';
 import * as Styled from "./styles";
 
 export function CourseDescription() {
-  const {data, isLoading}=useGetCoursesQuery()  
+  const { data, isLoading } = useGetCoursesQuery();
   const params = useParams(); 
 
   if(isLoading){

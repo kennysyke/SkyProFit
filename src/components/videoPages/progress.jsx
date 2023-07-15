@@ -19,8 +19,14 @@ export const ProgressBar = () => {
     <Styled.ProgressBox>
       <Styled.ProgressTitle>Мой прогресс по тренировке 2:</Styled.ProgressTitle>
       <Styled.ProgressBoxRange>
-        <Styled.LabelProgress>
-          Наклоны вперед
+        <Styled.LabelBox>
+          <Styled.LabelProgress>Наклоны вперед</Styled.LabelProgress>
+          <Styled.LabelProgress>Наклоны назад</Styled.LabelProgress>
+          <Styled.LabelProgress>
+            Поднятие ног, согнутых в коленях
+          </Styled.LabelProgress>
+        </Styled.LabelBox>
+        <Styled.InputsBox>
           <Styled.ContainerProgressBar1
             progressWidth={calculateProgressBarWidth(input1)}
           >
@@ -35,9 +41,6 @@ export const ProgressBar = () => {
               readOnly
             />
           </Styled.ContainerProgressBar1>
-        </Styled.LabelProgress>
-        <Styled.LabelProgress>
-          Наклоны назад
           <Styled.ContainerProgressBar2
             progressWidth={calculateProgressBarWidth(input2)}
           >
@@ -52,9 +55,6 @@ export const ProgressBar = () => {
               readOnly
             />
           </Styled.ContainerProgressBar2>
-        </Styled.LabelProgress>
-        <Styled.LabelProgress>
-          Поднятие ног, согнутых в коленях
           <Styled.ContainerProgressBar3
             progressWidth={calculateProgressBarWidth(input3)}
           >
@@ -69,7 +69,7 @@ export const ProgressBar = () => {
               readOnly
             />
           </Styled.ContainerProgressBar3>
-        </Styled.LabelProgress>
+        </Styled.InputsBox>
       </Styled.ProgressBoxRange>
     </Styled.ProgressBox>
   );

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import * as Styled from "./styles";
+// import { useGetWorkoutsQuery } from "../../redux/workoutsApi";
 import { ModalWindow } from "./modalProgress";
+// import { useParams } from "react-router-dom";
 
 export const Exercises = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

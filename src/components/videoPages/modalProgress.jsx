@@ -5,7 +5,6 @@ import {
   setInput1,
   setInput2,
   setInput3,
-  resetInputs,
 } from "../../redux/slices/modal-store";
 
 export const ModalWindow = ({ onClose }) => {
