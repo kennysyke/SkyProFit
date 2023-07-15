@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CourseContent = styled.div` 
-  width: 100%;
+  width: 1160px;
   min-height: 100%;
 `;
 
@@ -138,7 +138,6 @@ export const ContactText = styled.h2`
 export const CourseBannerContent = styled.div`
   width: 1160px;
   height: 310px;
-  background-image: url(images/courses-wide/skillcard.png);
-  margin-right: 20px;
-  margin-left: 20px;
+  background-image: url(images/courses-wide/yoga.png);
+  border-radius: 20px;
 `;

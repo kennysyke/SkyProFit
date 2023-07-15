@@ -1,18 +1,11 @@
 import { AppRoutes } from "../../routes";
-import styled from "styled-components";
-
-const StyledWrapper = styled.div` 
-  width: 100%;
-  min-height: 100%;
-  overflow: hidden;
- 
-`;
+import * as Styled from "./styles";
 
 export function App() {
   
   return (
-    <StyledWrapper>
+    <Styled.Wrapper>
       <AppRoutes />
-    </StyledWrapper>
+    </Styled.Wrapper>
   );
 }
