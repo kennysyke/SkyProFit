@@ -29,6 +29,7 @@ export const CourseCard = styled.img`
 `;
 
 export const CoursesContainer = styled.div`
+  width: 1160px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -37,6 +38,7 @@ export const CoursesContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
+  width: 1160px;
   display: flex;
   justify-content: space-between;
   padding-top: 30px;
@@ -44,6 +46,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const TitleContainer = styled.div`
+  width: 1160px;
   display: flex;
   flex-direction: column;
   gap: 17px;
@@ -94,6 +97,7 @@ export const BtnUp = styled.button`
 `;
 
 export const CenterContainer = styled.div`
+  width: 1160px;
   display: flex;
   flex-direction: column;
 `;
@@ -101,5 +105,48 @@ export const CenterContainer = styled.div`
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 34px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 `;
+
+export const BtnProfile = styled.button`
+  display: inline-block;	
+  box-sizing: border-box;
+  padding: 0 25px;
+  margin: 0 15px 15px 0;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  height: 46px;
+  line-height: 46px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #444;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  touch-action: manipulation;  
+  vertical-align: top;
+  transition: box-shadow 0.2s;
+  .btn:focus-visible {
+    border: 1px solid #4c51f9;
+    outline: none;
+  }
+  :hover {
+    transition: all 0.2s;
+    box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+  }
+  :active {
+    background-color: #808080;
+  }
+  :disabled {
+    background-color: #eee;
+    border-color: #eee;
+    color: #444;
+    cursor: not-allowed;
+  }
+`;
+

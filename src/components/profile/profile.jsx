@@ -3,6 +3,7 @@ import * as Styled from "./styles";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Logo } from "../main/header/logo";
+import { ProfileIcon } from "../main/header/profileIcon";
 
 
 export function Profile() {
@@ -20,6 +21,7 @@ export function Profile() {
       <Styled.ContainerProfile>
         <Styled.HeaderContainer>
         <Logo/>
+        <ProfileIcon/>
         </Styled.HeaderContainer>
         <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
         <Styled.ProfileSubTitle>Логин: sergey.petrov96</Styled.ProfileSubTitle>

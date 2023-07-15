@@ -8,7 +8,8 @@ export function Header() {
   return (
     <Styled.HeaderContainer>
       <Logo src= {isMainPage ? "images/icons/logo.svg" : "images/icons/logo-black.svg"}   />
-      {isMainPage ? <Button/> : ''}     
+      <Button/>
+      {/* {isMainPage ? <Button/> : ''}      */}
     </Styled.HeaderContainer>
   );
 }

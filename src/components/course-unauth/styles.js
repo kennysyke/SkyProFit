@@ -138,7 +138,5 @@ export const ContactText = styled.h2`
 export const CourseBannerContent = styled.div`
   width: 1160px;
   height: 310px;
-  background-image: url(images/courses-wide/skillcard.png);
-  margin-right: 20px;
-  margin-left: 20px;
+  background-image: url(images/courses-wide/yoga.png);
 `;

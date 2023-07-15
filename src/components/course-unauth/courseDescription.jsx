@@ -18,7 +18,7 @@ export function CourseDescription() {
   return (
     <Styled.CourseContent>
       <Styled.CourseBannerContent>
-        <Styled.TitleCard>Йога</Styled.TitleCard>
+        <Styled.TitleCard>{courses.name}</Styled.TitleCard>
       </Styled.CourseBannerContent>
       <div>
         <Styled.TitleLarge>Подойдет для вас, если:</Styled.TitleLarge>

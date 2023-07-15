@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ContainerForm = styled.div`
-    max-width: 1920px;
     height: 100vh;
     margin: 0 auto;
     position: relative;
@@ -20,7 +19,6 @@ export const NewLoginForm = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-
 `;
 
 export const NewPasForm = styled.div`
@@ -32,46 +30,44 @@ export const NewPasForm = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-
 `;
 
 export const LabelForm = styled.div`
-width: 278.5px;
-height: 35px;
-
+    width: 278.5px;
+    height: 35px;
 `;
 
 export const LoginInput = styled.input`
-width: 278.5px;
-height: 35px;
-border: none;
-border-bottom: 1px solid #D0CECE;;
-margin-bottom: 60px;
-padding-bottom: 8px;
-::placeholder {       
-    color: #E1E1E1;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
+    width: 278.5px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #D0CECE;;
+    margin-bottom: 60px;
+    padding-bottom: 8px;
+    ::placeholder {       
+        color: #E1E1E1;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
 }
 
 `;
 
 export const PasswordInput = styled.input`
-width: 278.5px;
-height: 35px;
-border: none;
-border-bottom: 1px solid #D0CECE;;
-margin-bottom: 60px;
-padding-bottom: 8px;
-::placeholder {       
-    color: #E1E1E1;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
-}
+    width: 278.5px;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #D0CECE;;
+    margin-bottom: 60px;
+    padding-bottom: 8px;
+    ::placeholder {       
+        color: #E1E1E1;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+    }
 
 `;
 
