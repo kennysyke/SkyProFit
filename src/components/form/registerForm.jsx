@@ -36,7 +36,7 @@ export const RegistrationForm = () => {
   return (
     <Styled.ContainerLoginForm>
       <Styled.LoginForms>
-      <Logo/>
+      <Logo src = "images/icons/logo-black.svg"/>
         <Styled.LoginInput 
         type="email" 
         placeholder="Email"        
