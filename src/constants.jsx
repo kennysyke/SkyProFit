@@ -30,3 +30,22 @@ export const CARDS = [
         
     },
 ];
+
+
+export const MYCARDS = [
+  {
+    id: "yo2g4f",
+    image: "images/my-courses/yoga-card.png",
+    alt: "Course yoga",
+  },
+  {
+    id: "ab1c3f",
+    image: "images/my-courses/stretching-card.png",
+    alt: "Course stretching",
+  },
+  {
+    id: "bod73x",
+    image: "images/my-courses/bodyflex-card.png",
+    alt: "Course bodyflex",
+  },
+];

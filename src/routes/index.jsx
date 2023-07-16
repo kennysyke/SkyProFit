@@ -14,16 +14,16 @@ import { Newpas } from '../components/form/data change/newpas';
 export const AppRoutes = () => {
   
     return (
-        <Routes>           
-            <Route path="/" element={<MainPage/>}/>  
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/registration" element={<Registration/>}/>
-            <Route path="/course/:id" element={<CourseUnauth/>}/>
-            <Route path="/account" element={<Account/>}/> 
-            <Route path="/newlogin" element={<Newlogin/>}/> 
-            <Route path="/newpas" element={<Newpas/>}/> 
-            <Route path="/workoutVideoPage" element={<WorkoutVideoPage/>}/>      
-            <Route path="*" element={<NotFound />}/>          
-        </Routes>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/course/:id" element={<CourseUnauth />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/newlogin" element={<Newlogin />} />
+        <Route path="/newpas" element={<Newpas />} />
+        <Route path="/account/:workoutid" element={<WorkoutVideoPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     );
 };

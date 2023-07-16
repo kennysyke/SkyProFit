@@ -55,9 +55,22 @@ export const ProgressTitle = styled.h2`
 
 export const ProgressBoxRange = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 30px;
 `;
+
+export const LabelBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const InputsBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
 export const LabelProgress = styled.label`
   color: #000;
   font-size: 24px;
