@@ -13,9 +13,7 @@ export function CourseDescription() {
      }
   const course = Object.values(data)
   const courses = course.find((cours) => cours._id === params.id); 
-  console.log(courses.img)
   
-  console.log(courses)
   return (
     <Styled.CourseContent>
       <Styled.CourseBannerContent>
