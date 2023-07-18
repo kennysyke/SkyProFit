@@ -231,3 +231,6 @@ export const CloseButton = styled.button`
   font-weight: 400;
   line-height: 18px;
 `;
+
+
+
