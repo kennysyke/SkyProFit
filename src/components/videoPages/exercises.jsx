@@ -4,7 +4,7 @@ import * as Styled from "./styles";
 import { ModalWindow } from "./modalProgress";
 // import { useParams } from "react-router-dom";
 
-export const Exercises = () => {
+export const Exercises = ({ exercises }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -15,24 +15,22 @@ export const Exercises = () => {
     setIsModalOpen(false);
   };
 
+  console.log(exercises);
+
   return (
     <Styled.ExercisesBox>
       <Styled.ExercisesTitle>Упражнения</Styled.ExercisesTitle>
       <Styled.ExercisesList>
-        <Styled.ExercisesListItems>
-          Наклон вперед (10 повторений)
-        </Styled.ExercisesListItems>
-        <Styled.ExercisesListItems>
-          Наклон назад (10 повторений)
-        </Styled.ExercisesListItems>
-        <Styled.ExercisesListItems>
-          Поднятие ног, согнутых в коленях (5 повторений)
-        </Styled.ExercisesListItems>
+        {exercises.map((ex) => (
+          <Styled.ExercisesListItems>{ex}</Styled.ExercisesListItems>
+        ))}
       </Styled.ExercisesList>
       <Styled.BtnEnter onClick={handleOpenModal}>
         Заполнить свой прогресс
       </Styled.BtnEnter>
-      {isModalOpen && <ModalWindow onClose={handleCloseModal} />}
+      {isModalOpen && (
+        <ModalWindow onClose={handleCloseModal} exercises={exercises} />
+      )}
     </Styled.ExercisesBox>
   );
 };

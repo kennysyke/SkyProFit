@@ -29,23 +29,25 @@ export const ModalWorkout = ({ onClose, cardId }) => {
   const workout = Object.values(workoutsData);
   const workouts = workout.filter((work) => courses.workout.includes(work._id));
 
-  console.log(courses);
-  console.log(courses.workout);
-
-  console.log(workout);
-  console.log(workouts);
+  const handleClose = () => {
+    onClose();
+  };
 
   return (
     <Styled.ModalContainer>
       <Styled.ModalContent>
-        <Styled.ModalHeader>Выберите тренировку</Styled.ModalHeader>
-        <div>
+        <Styled.ModalHeader>
+          Выберите тренировку
+          <Styled.CloseButton onClick={handleClose}>X</Styled.CloseButton>
+        </Styled.ModalHeader>
+
+        <Styled.WorkoutList>
           {workouts.map((w) => (
             <Link to={`/account/${w._id}`} key={w._id}>
-              <div>{w.name}</div>
+              <Styled.WorkoutItem>{w.name}</Styled.WorkoutItem>
             </Link>
           ))}
-        </div>
+        </Styled.WorkoutList>
       </Styled.ModalContent>
     </Styled.ModalContainer>
   );
