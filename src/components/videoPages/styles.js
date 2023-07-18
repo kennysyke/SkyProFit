@@ -101,53 +101,53 @@ export const ContainerProgressBar1 = styled.div`
     background: #565eef;
   }
 `;
-export const ContainerProgressBar2 = styled.div`
-  position: relative;
-  display: inline-block;
-  border-radius: 22px;
-  border: 2px solid #ff6d00;
-  background: #edecff;
-  height: 36px;
-  width: 278px;
-  overflow: hidden;
+// export const ContainerProgressBar2 = styled.div`
+//   position: relative;
+//   display: inline-block;
+//   border-radius: 22px;
+//   border: 2px solid #ff6d00;
+//   background: #edecff;
+//   height: 36px;
+//   width: 278px;
+//   overflow: hidden;
 
-  ::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: ${(props) => props.progressWidth};
-    background: #ff6d00;
-  }
-`;
-export const ContainerProgressBar3 = styled.div`
-  position: relative;
-  display: inline-block;
-  border-radius: 22px;
-  border: 2px solid #9a48f1;
-  background: #edecff;
-  height: 36px;
-  width: 278px;
-  overflow: hidden;
+//   ::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: ${(props) => props.progressWidth};
+//     background: #ff6d00;
+//   }
+// `;
+// export const ContainerProgressBar3 = styled.div`
+//   position: relative;
+//   display: inline-block;
+//   border-radius: 22px;
+//   border: 2px solid #9a48f1;
+//   background: #edecff;
+//   height: 36px;
+//   width: 278px;
+//   overflow: hidden;
 
-  ::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: ${(props) => props.progressWidth};
-    background: #9a48f1;
-  }
-`;
+//   ::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: ${(props) => props.progressWidth};
+//     background: #9a48f1;
+//   }
+// `;
 
-export const ProgressBar2 = styled.input`
-  opacity: 0%;
-`;
-export const ProgressBar3 = styled.input`
-  opacity: 0%;
-`;
+// export const ProgressBar2 = styled.input`
+//   opacity: 0%;
+// `;
+// export const ProgressBar3 = styled.input`
+//   opacity: 0%;
+// `;
 
 export const BtnEnter = styled.button`
   width: 278px;

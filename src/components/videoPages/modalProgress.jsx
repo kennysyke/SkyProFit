@@ -7,7 +7,8 @@ import {
   setInput3,
 } from "../../redux/slices/modal-store";
 
-export const ModalWindow = ({ onClose }) => {
+export const ModalWindow = ({ onClose, exercises }) => {
+  console.log(exercises);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -19,50 +20,44 @@ export const ModalWindow = ({ onClose }) => {
 
     switch (inputName) {
       case "input1":
-        dispatch(setInput1(inputValue));
+        dispatch(setInput1(Number(inputValue)));
         break;
       case "input2":
-        dispatch(setInput2(inputValue));
+        dispatch(setInput2(Number(inputValue)));
         break;
       case "input3":
-        dispatch(setInput3(inputValue));
+        dispatch(setInput3(Number(inputValue)));
         break;
       default:
         break;
     }
   };
 
+  const extractedText = exercises.map((str) => str.split("(")[0].trim());
+
+  const smallLetter = extractedText.map((element) => {
+    const firstLetter = element.charAt(0).toLowerCase();
+    const restOfWord = element.slice(1);
+    return firstLetter + restOfWord;
+  });
+
   return (
     <Styled.ModalContainer>
       <Styled.ModalContent>
         <Styled.ModalHeader>Мой прогресс</Styled.ModalHeader>
-        <Styled.ModalQuestion htmlFor="input1">
-          Сколько раз вы сделали наклоны вперед?
-        </Styled.ModalQuestion>
-        <Styled.ModalInput
-          type="text"
-          id="input1"
-          placeholder="Введите значение"
-          onChange={(e) => handleInputChange(e, "input1")}
-        />
-        <Styled.ModalQuestion htmlFor="input2">
-          Сколько раз вы сделали наклоны назад?
-        </Styled.ModalQuestion>
-        <Styled.ModalInput
-          type="text"
-          id="input2"
-          placeholder="Введите значение"
-          onChange={(e) => handleInputChange(e, "input2")}
-        />
-        <Styled.ModalQuestion htmlFor="input3">
-          Сколько раз вы сделали поднятие ног, согнутых в коленях?
-        </Styled.ModalQuestion>
-        <Styled.ModalInput
-          type="text"
-          id="input3"
-          placeholder="Введите значение"
-          onChange={(e) => handleInputChange(e, "input3")}
-        />
+        {smallLetter.map((exercise, index) => (
+          <React.Fragment key={index}>
+            <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
+              Cколько раз вы сделали {exercise}?
+            </Styled.ModalQuestion>
+            <Styled.ModalInput
+              type="text"
+              id={`input${index + 1}`}
+              placeholder="Введите значение"
+              onChange={(e) => handleInputChange(e, `input${index + 1}`)}
+            />
+          </React.Fragment>
+        ))}
         <Styled.ModalButton onClick={handleSubmit} id="submitBtn">
           Отправить
         </Styled.ModalButton>
@@ -70,3 +65,4 @@ export const ModalWindow = ({ onClose }) => {
     </Styled.ModalContainer>
   );
 };
+

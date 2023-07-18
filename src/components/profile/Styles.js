@@ -195,3 +195,39 @@ export const ModalHeader = styled.h3`
   line-height: 40px;
   padding-bottom: 30px;
 `;
+
+export const WorkoutList = styled.div`
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const WorkoutItem = styled.div`
+  width: 278px;
+  height: 76px;
+  flex-shrink: 0;
+  border-radius: 26px;
+  border: 1px solid var(--mint-90, #06b16e);
+  color: var(--mint-90, #06b16e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.016px;
+`;
+
+export const CloseButton = styled.button`
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+`;
