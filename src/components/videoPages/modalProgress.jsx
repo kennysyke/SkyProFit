@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import * as Styled from "./styles";
 import { useDispatch } from "react-redux";
 import {
@@ -6,12 +6,15 @@ import {
   setInput2,
   setInput3,
 } from "../../redux/slices/modal-store";
+import { ModalOk } from "./modalOk";
 
 export const ModalWindow = ({ onClose, exercises }) => {
+  const [showModalOk, setShowModalOk] = useState(false);
   console.log(exercises);
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
+    setShowModalOk(true);
     onClose();
   };
 
@@ -41,10 +44,20 @@ export const ModalWindow = ({ onClose, exercises }) => {
     return firstLetter + restOfWord;
   });
 
+  useEffect(() => {
+    if (showModalOk) {
+      const timer = setTimeout(() => {
+        setShowModalOk(false);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [showModalOk]);
+
   return (
     <Styled.ModalContainer>
       <Styled.ModalContent>
         <Styled.ModalHeader>Мой прогресс</Styled.ModalHeader>
+        <ModalOk />
         {smallLetter.map((exercise, index) => (
           <React.Fragment key={index}>
             <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
@@ -62,7 +75,7 @@ export const ModalWindow = ({ onClose, exercises }) => {
           Отправить
         </Styled.ModalButton>
       </Styled.ModalContent>
+      {showModalOk && <ModalOk />}
     </Styled.ModalContainer>
   );
 };
-

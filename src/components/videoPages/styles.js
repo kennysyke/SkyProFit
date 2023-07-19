@@ -230,3 +230,9 @@ export const ModalButton = styled.button`
   color: white;
   background: #580ea2;
 `;
+
+export const Image = styled.image`
+  width: 104.235px;
+  height: 254.601px;
+  flex-shrink: 0;
+`;

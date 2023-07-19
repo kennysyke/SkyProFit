@@ -12,7 +12,7 @@ export const WorkoutVideoPage = () => {
   const params = useParams();
 
   if (isLoading) {
-    return <h1>Идет подгрзука данных</h1>;
+    console.log(`Идет подгрзука данных`);
   }
   const workouts = Object.values(data);
   const workout = workouts.find((w) => w._id === params.workoutid);
