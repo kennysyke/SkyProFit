@@ -9,9 +9,16 @@ export const ProgressBar = ({ exercises }) => {
     { id: 3, value: state.modalWindow.input3 },
   ]);
 
-  console.log(inputs[0].value);
-  console.log(inputs[1].value);
-  console.log(inputs[2].value);
+  const numbers = [];
+
+  const regex = /\d+/;
+
+  for (let item of exercises) {
+    const match = item.match(regex);
+    if (match) {
+      numbers.push(parseInt(match[0]));
+    }
+  }
 
   const calculateProgressBarWidth = (value) => {
     return `${(value / 10) * 100}%`;
@@ -33,14 +40,12 @@ export const ProgressBar = ({ exercises }) => {
             {extractedText.map((_, index) => (
               <Styled.ContainerProgressBar1
                 key={index}
-                style={{
-                  progressWidth: calculateProgressBarWidth(inputs[index].value),
-                }}
+                progressWidth={calculateProgressBarWidth(inputs[index].value)}
               >
                 <Styled.ProgressBar1
                   type="range"
                   min="0"
-                  max="10"
+                  max={numbers[index]}
                   value={inputs[index].value}
                   readOnly
                 />
