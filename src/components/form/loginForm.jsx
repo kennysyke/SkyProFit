@@ -16,23 +16,26 @@ export const LoginForm = () => {
 
   const handleLogin = () => {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-    .then(response => {
-      console.log(response);
-    })
+    signInWithEmailAndPassword(auth, email, password)    
     .then(({user}) => {
       dispatch(setUser({
         email: user.email,
         id: user.uid,
         token: user.accessToken
       }))
+     if(user) {
+      navigate('/')
+     } return
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode, errorMessage)
+      if(errorCode) {
+        alert(errorMessage)
+        return
+      }      
     });
-    navigate('/')
+   
   }
 
   function handleRegistration() {
