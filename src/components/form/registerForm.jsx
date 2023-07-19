@@ -28,11 +28,18 @@ export const RegistrationForm = () => {
         id: user.uid,
         token: user.accessToken
       }))
+      if(user) {
+        navigate('/login')
+       } return
     })
-    .catch((error) => {          
-      alert(error.code) 
-    });
-    navigate('/login')
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if(errorCode) {
+        alert(errorMessage)
+        return
+      } 
+    });    
   }
   return (
     <Styled.ContainerLoginForm>
