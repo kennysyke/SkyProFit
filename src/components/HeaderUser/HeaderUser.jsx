@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import * as Styled from './styles'
 import { removeUser } from '../../redux/slices/userSlice'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 export function HeaderUser() {
   const userEmail = useSelector((state) => state.user.email)
   const [isOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch()
 
   const onLogout = () => {
-    removeUser()
+    dispatch(removeUser())
     localStorage.clear()
   }
 
