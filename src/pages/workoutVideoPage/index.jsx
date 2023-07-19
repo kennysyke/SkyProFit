@@ -19,21 +19,19 @@ export const WorkoutVideoPage = () => {
 
   console.log(workouts);
 
-  console.log(workout);
+  console.log(workout.source);
 
   return (
     <Styled.StyledContainer>
       <Header />
       <Styled.VideoTitleBlock>
         <Styled.VideoTitle>Йога</Styled.VideoTitle>
-        <Styled.VideoSubTitle>
-          Красота и здоровье / Йога на каждый день / 2 день
-        </Styled.VideoSubTitle>
+        <Styled.VideoSubTitle>{workout.name}</Styled.VideoSubTitle>
       </Styled.VideoTitleBlock>
-      <Player />
+      <Player source={workout.source} />
       <Styled.ExercisesProgressBox>
-        <Exercises />
-        <ProgressBar />
+        <Exercises exercises={workout.exercises} />
+        <ProgressBar exercises={workout.exercises} />
       </Styled.ExercisesProgressBox>
     </Styled.StyledContainer>
   );
