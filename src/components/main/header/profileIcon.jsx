@@ -1,11 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import * as Styled from "../styles";
+import React from 'react'
+import { HeaderUser } from '../../HeaderUser/HeaderUser'
 
 export function ProfileIcon() {
-  return (   
-    <Link to="/account">
-      <Styled.BtnProfile>Сергей</Styled.BtnProfile>  
-    </Link> 
-  );
+  return <HeaderUser />
 }

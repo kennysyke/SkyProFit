@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import * as Styled from "./styles";
-import { useNavigate } from "react-router-dom";
-import { Logo } from "../main/header/logo";
-import { ProfileIcon } from "../main/header/profileIcon";
+import React, { useState } from 'react'
+import * as Styled from './styles'
+import { useNavigate } from 'react-router-dom'
+import { Logo } from '../main/header/logo'
+import { ProfileIcon } from '../main/header/profileIcon'
 
-import { MYCARDS } from "../../constants";
-import { ModalWorkout } from "./modalWorkoutsList";
+import { MYCARDS } from '../../constants'
+import { ModalWorkout } from './modalWorkoutsList'
 
 export function Profile() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handleLoginChange = () => {
-    navigate("/newlogin");
-  };
+    navigate('/newlogin')
+  }
 
   function handlePasChange() {
-    navigate("/newpas");
+    navigate('/newpas')
   }
-  const [selectedCardId, setSelectedCardId] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCardId, setSelectedCardId] = useState(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleOpenModal = (cardId) => {
-    setSelectedCardId(cardId);
-    setIsModalOpen(true);
-  };
+    setSelectedCardId(cardId)
+    setIsModalOpen(true)
+  }
 
   const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+    setIsModalOpen(false)
+  }
   return (
     <div>
       <Styled.ContainerProfile>
@@ -50,10 +50,11 @@ export function Profile() {
 
       <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
-        {MYCARDS.map((card) => (
+        {MYCARDS.map((card, i) => (
           <Styled.CourseCard
             src={card.image}
             alt={card.alt}
+            key={i}
             onClick={() => handleOpenModal(card.id)}
           />
         ))}
@@ -62,5 +63,5 @@ export function Profile() {
         <ModalWorkout cardId={selectedCardId} onClose={handleCloseModal} />
       )}
     </div>
-  );
+  )
 }
