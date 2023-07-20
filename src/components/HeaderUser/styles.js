@@ -6,6 +6,7 @@ export const User = Styled.div`
     gap: 12px;
     align-items: center;
     position: relative;
+    margin-top: -25px;
 `
 export const Email = Styled.div`
     font-size: 24px;

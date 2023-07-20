@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import * as Styled from './styles'
 import { useNavigate } from 'react-router-dom'
-import { Logo } from '../main/header/logo'
 import { ProfileIcon } from '../main/header/profileIcon'
 
 import { MYCARDS } from '../../constants'
 import { ModalWorkout } from './modalWorkoutsList'
+import { Logo } from '../Logo/Logo'
 
 export function Profile() {
   const navigate = useNavigate()

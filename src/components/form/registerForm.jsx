@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import {setUser} from "../../redux/slices/userSlice"
-import { Logo } from "../main/header/logo";
 import { ButtonForm } from "./ButtonForm"
+import { Logo } from "../Logo/Logo";
 
 export const RegistrationForm = () => {
   const [email, setEmail] = useState();
@@ -44,7 +44,7 @@ export const RegistrationForm = () => {
   return (
     <Styled.ContainerLoginForm>
       <Styled.LoginForms>
-      <Logo src = "images/icons/logo-black.svg"/>
+      <Logo />
         <Styled.LoginInput 
           type="email" 
           placeholder="Email"        

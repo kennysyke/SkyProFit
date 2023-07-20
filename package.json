@@ -52,7 +52,7 @@
     "eslint-plugin-react": "^7.32.2",
     "identity-obj-proxy": "^3.0.0",
     "msw": "^1.2.2",
-    "prettier": "2.8.7"
+    "prettier": "^3.0.0"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
