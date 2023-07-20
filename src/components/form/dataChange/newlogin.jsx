@@ -2,19 +2,28 @@ import React from "react";
 import * as Styled from "./styles";
 import { Logo } from "../../Logo/Logo";
 import { getAuth, onAuthStateChanged, updateEmail } from "firebase/auth";
+import { setUser } from '../../../redux/slices/userSlice'
 import { useState } from "react";
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 export function Newlogin() {
   const [login, setLogin] = useState() 
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   
 const reLogin = () => {
   const auth = getAuth();
-
   updateEmail(auth.currentUser, login).then(() => {
-
-    onAuthStateChanged(auth, (user) => {        
-    console.log(user)      
-
+  onAuthStateChanged(auth, (user) => {        
+    dispatch(
+      setUser({
+        email: user.email,
+        id: user.uid,
+        token: user.accessToken,
+      })
+    )  
+    navigate('/account')
 });
   }).catch((error) => {
     const errorCode = error.code
