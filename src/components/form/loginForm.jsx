@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { setUser } from '../../redux/slices/userSlice'
-import { Logo } from '../main/header/logo'
 import { ButtonForm } from './ButtonForm'
+import { Logo } from '../Logo/Logo'
 
 export const LoginForm = () => {
   const [email, setEmail] = useState()
@@ -46,7 +46,7 @@ export const LoginForm = () => {
   return (
     <Styled.ContainerLoginForm>
       <Styled.LoginForms>
-        <Logo src='images/icons/logo-black.svg' />
+        <Logo />
         <Styled.LoginInput
           type='email'
           placeholder='Email'
