@@ -14,7 +14,7 @@ export const HeaderContainer = styled.div`
   padding-bottom: 35px;
 `;
 
-export const ProfileTitle = styled.h1`
+export const ProfileTitle = styled.h2`
     color: #000;
     font-size: 48px;
     font-style: normal;
@@ -232,6 +232,15 @@ export const CloseButton = styled.button`
   line-height: 18px;
 `;
 
+
+export const CoursesCards = styled.div`
+  position: relative; 
+  overflow: hidden; 
+    :hover {
+      transform: scale(1.005); 
+    }
+`;
+
 export const GoBtn = styled.button`
   width: 140px;
   font-size: 18px;
@@ -244,6 +253,7 @@ export const GoBtn = styled.button`
   border-radius: 50px;
   box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
   transform: translate(20%, -170%);
+  transition: opacity .35s ease;
     :hover {
       cursor: pointer; 
       background-color: #DAF289;

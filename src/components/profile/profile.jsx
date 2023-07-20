@@ -28,6 +28,7 @@ export function Profile() {
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
+
   return (
     <div>
       <Styled.ContainerProfile>
@@ -36,8 +37,8 @@ export function Profile() {
           <ProfileIcon />
         </Styled.HeaderContainer>
         <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
-        <Styled.ProfileSubTitle>Логин: sergey.petrov96</Styled.ProfileSubTitle>
-        <Styled.ProfileSubTitle>Пароль: 4fkhdj880d</Styled.ProfileSubTitle>
+        <Styled.ProfileSubTitle>Логин: username</Styled.ProfileSubTitle>
+        <Styled.ProfileSubTitle>Пароль: password</Styled.ProfileSubTitle>
         <Styled.BtnBox>
           <Styled.BtnChange onClick={handleLoginChange}>
             Редактировать логин
@@ -50,15 +51,14 @@ export function Profile() {
 
       <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
-        {MYCARDS.map((card, i) => (
-          <div>
+        {MYCARDS.map((card) => (
+          <Styled.CoursesCards>
             <Styled.CourseCard
             src={card.image}
             alt={card.alt}
-            key={i}
           />
           <Styled.GoBtn onClick={() => handleOpenModal(card.id)} >Перейти →</Styled.GoBtn>
-          </div>
+          </Styled.CoursesCards>
         ))}
       </Styled.CoursesContainer>
       {isModalOpen && (

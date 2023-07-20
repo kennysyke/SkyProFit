@@ -19,8 +19,8 @@ export const LoginForm = () => {
       .then(({ user }) => {
         localStorage.setItem('token', user.accessToken);
         // const username = email.split('@')[0];
-        // console.log(username);
-        // console.log(password)
+        // localStorage.setItem('username', username);
+        // localStorage.setItem('password', password);
         dispatch(
           setUser({
             email: user.email,
@@ -28,6 +28,8 @@ export const LoginForm = () => {
             token: user.accessToken,
           })
         )
+        // При логирование не сразу переходить в личный профиль
+        // navigate('/account')
         if (user) {
           navigate('/account')
         }
