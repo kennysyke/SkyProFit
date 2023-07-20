@@ -17,6 +17,10 @@ export const LoginForm = () => {
     const auth = getAuth()
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
+        localStorage.setItem('token', user.accessToken);
+        // const username = email.split('@')[0];
+        // console.log(username);
+        // console.log(password)
         dispatch(
           setUser({
             email: user.email,

@@ -8,19 +8,25 @@ import { WorkoutVideoPage } from '../pages/workoutVideoPage'
 import { Account } from '../pages/account'
 import { Newlogin } from '../components/form/dataChange/newlogin';
 import { Newpas } from '../components/form/dataChange/newpas';
+import { ProtectedRoute } from '../protected-route/index';
 
 export const AppRoutes = () => {
+
+    const token = localStorage.getItem('token');
     return (
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/course/:id" element={<CourseUnauth />} />
+        <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/course/:id" element={<CourseUnauth />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/newlogin" element={<Newlogin />} />
-        <Route path="/newpas" element={<Newpas />} />
-        <Route path="/account/:workoutid" element={<WorkoutVideoPage />} />
-        <Route path="*" element={<NotFound />} />
+
+        <Route element={<ProtectedRoute isAllowed={Boolean(token)} />}>
+          <Route path="/account" element={<Account />} />
+          <Route path="/newlogin" element={<Newlogin />} />
+          <Route path="/newpas" element={<Newpas />} />
+          <Route path="/account/:workoutid" element={<WorkoutVideoPage />} />
+        </Route>
       </Routes>
     );
 };
