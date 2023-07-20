@@ -51,12 +51,14 @@ export function Profile() {
       <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
         {MYCARDS.map((card, i) => (
-          <Styled.CourseCard
+          <div>
+            <Styled.CourseCard
             src={card.image}
             alt={card.alt}
             key={i}
-            onClick={() => handleOpenModal(card.id)}
           />
+          <Styled.GoBtn onClick={() => handleOpenModal(card.id)} >Перейти →</Styled.GoBtn>
+          </div>
         ))}
       </Styled.CoursesContainer>
       {isModalOpen && (

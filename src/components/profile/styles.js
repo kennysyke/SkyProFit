@@ -232,5 +232,23 @@ export const CloseButton = styled.button`
   line-height: 18px;
 `;
 
-
-
+export const GoBtn = styled.button`
+  width: 140px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  padding: 10px 10px;
+  background-color: #C7E957;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+  transform: translate(20%, -170%);
+    :hover {
+      cursor: pointer; 
+      background-color: #DAF289;
+    }
+    :active{
+      background-color: #EBFFAB;
+    }
+`;
