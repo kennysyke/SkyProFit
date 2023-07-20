@@ -6,7 +6,7 @@ import { ProfileIcon } from '../main/header/profileIcon'
 import { MYCARDS } from '../../constants'
 import { ModalWorkout } from './modalWorkoutsList'
 import { Logo } from '../Logo/Logo'
-
+import { useAuth } from '../../redux/hooks/useAuth'
 export function Profile() {
   const navigate = useNavigate()
 
@@ -28,6 +28,7 @@ export function Profile() {
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
+  const {email} = useAuth()
   return (
     <div>
       <Styled.ContainerProfile>
@@ -36,7 +37,7 @@ export function Profile() {
           <ProfileIcon />
         </Styled.HeaderContainer>
         <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
-        <Styled.ProfileSubTitle>Логин: sergey.petrov96</Styled.ProfileSubTitle>
+        <Styled.ProfileSubTitle>Логин: {email}</Styled.ProfileSubTitle>
         <Styled.ProfileSubTitle>Пароль: 4fkhdj880d</Styled.ProfileSubTitle>
         <Styled.BtnBox>
           <Styled.BtnChange onClick={handleLoginChange}>
