@@ -1,12 +1,5 @@
 import styled from 'styled-components'
 
-export const Logo = styled.img`
-  width: 220px;
-  height: 35px;
-  flex-shrink: 0;
-  margin-bottom: 25px;
-`
-
 export const BtnLogin = styled.button`
   display: inline-flex;
   padding: 5px 16px 7px 16px;

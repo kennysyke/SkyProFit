@@ -6,13 +6,10 @@ import { Registration } from '../pages/signup';
 import { CourseUnauth } from '../pages/course-unauth';
 import { WorkoutVideoPage } from '../pages/workoutVideoPage' 
 import { Account } from '../pages/account'
-import { Newlogin } from '../components/form/data change/newlogin';
-import { Newpas } from '../components/form/data change/newpas';
-
-
+import { Newlogin } from '../components/form/dataChange/newlogin';
+import { Newpas } from '../components/form/dataChange/newpas';
 
 export const AppRoutes = () => {
-  
     return (
       <Routes>
         <Route path="/" element={<MainPage />} />
