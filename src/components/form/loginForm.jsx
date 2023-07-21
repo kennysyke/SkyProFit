@@ -24,13 +24,18 @@ export const LoginForm = () => {
             token: user.accessToken,
           })
         )
+
         if (user) {
           navigate('/account')
+          localStorage.setItem('userPassword', password) 
         }
         return
       })
       .catch((error) => {
-        
+        const errorCode = error.code;
+        const errorMessage = error.message;       
+        alert(errorCode, '/',  errorMessage)   
+      
       })
   }
 

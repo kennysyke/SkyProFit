@@ -33,10 +33,6 @@ const reLogin = () => {
       return
     }
   });
-
-
-
-    
 }
   return (
     <Styled.ContainerForm>
