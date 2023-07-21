@@ -231,8 +231,8 @@ export const ModalButton = styled.button`
   background: #580ea2;
 `;
 
-export const Image = styled.image`
-  width: 104.235px;
-  height: 254.601px;
+export const Image = styled.img`
+  width: 180px;
+  height: 255px;
   flex-shrink: 0;
-`;
+`

@@ -7,7 +7,9 @@ export const ProgressBar = ({ exercises }) => {
     { id: 1, value: state.modalWindow.input1 },
     { id: 2, value: state.modalWindow.input2 },
     { id: 3, value: state.modalWindow.input3 },
-  ]);
+    { id: 4, value: state.modalWindow.input4 },
+    { id: 5, value: state.modalWindow.input5 },
+  ])
 
   const numbers = [];
 
