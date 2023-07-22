@@ -29,7 +29,9 @@ export function Profile() {
     setIsModalOpen(false)
   }
   const {email} = useAuth()
+
   const password = localStorage.getItem('userPassword')
+
   return (
     <div>
       <Styled.ContainerProfile>
@@ -52,13 +54,14 @@ export function Profile() {
 
       <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
-        {MYCARDS.map((card, i) => (
-          <Styled.CourseCard
+        {MYCARDS.map((card) => (
+          <Styled.CoursesCards>
+            <Styled.CourseCard
             src={card.image}
             alt={card.alt}
-            key={i}
-            onClick={() => handleOpenModal(card.id)}
           />
+          <Styled.GoBtn onClick={() => handleOpenModal(card.id)} >Перейти →</Styled.GoBtn>
+          </Styled.CoursesCards>
         ))}
       </Styled.CoursesContainer>
       {isModalOpen && (
