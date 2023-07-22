@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Styled from '../account/styles'
+import * as Styled from './styles'
 import { useGetCoursesQuery } from '../../redux/fitnesApiBase'
 import { Link } from 'react-router-dom'
 

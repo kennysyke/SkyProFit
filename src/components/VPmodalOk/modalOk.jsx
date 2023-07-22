@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import * as Styled from '../VPmodalProgress/styles'
+import * as Styled from './styles'
 
 export const ModalOk = ({ showModalOk, setShowModalOk, onClose }) => {
   useEffect(() => {

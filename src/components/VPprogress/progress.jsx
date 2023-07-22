@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Styled from '../VPmodalProgress/styles'
+import * as Styled from './styles'
 import { useSelector } from 'react-redux'
 
 export const ProgressBar = ({ exercises }) => {

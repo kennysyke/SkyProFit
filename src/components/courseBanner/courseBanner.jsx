@@ -1,5 +1,5 @@
 import React from 'react'
-import * as Styled from '../course-unauth/styles'
+import * as Styled from './styles'
 
 export function CourseBanner({ src, alt }) {
   return (

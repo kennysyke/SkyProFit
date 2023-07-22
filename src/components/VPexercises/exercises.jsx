@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import * as Styled from '../VPmodalProgress/styles'
+import * as Styled from './styles'
 import { ModalWindow } from '../VPmodalProgress/modalProgress'
 
 export const Exercises = ({ exercises }) => {
