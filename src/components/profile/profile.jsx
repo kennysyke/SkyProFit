@@ -29,6 +29,9 @@ export function Profile() {
     setIsModalOpen(false)
   }
   const {email} = useAuth()
+
+  const password = localStorage.getItem('userPassword')
+
   return (
     <div>
       <Styled.ContainerProfile>
@@ -38,7 +41,7 @@ export function Profile() {
         </Styled.HeaderContainer>
         <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
         <Styled.ProfileSubTitle>Логин: {email}</Styled.ProfileSubTitle>
-        <Styled.ProfileSubTitle>Пароль: 4fkhdj880d</Styled.ProfileSubTitle>
+        <Styled.ProfileSubTitle>Пароль: {password}</Styled.ProfileSubTitle>
         <Styled.BtnBox>
           <Styled.BtnChange onClick={handleLoginChange}>
             Редактировать логин

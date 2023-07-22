@@ -28,20 +28,22 @@ export const LoginForm = () => {
             token: user.accessToken,
           })
         )
+
         // При логирование не сразу переходить в личный профиль
         // navigate('/account')
+
+
         if (user) {
           navigate('/account')
+          localStorage.setItem('userPassword', password) 
         }
         return
       })
       .catch((error) => {
-        const errorCode = error.code
-        const errorMessage = error.message
-        if (errorCode) {
-          alert(errorMessage)
-          return
-        }
+        const errorCode = error.code;
+        const errorMessage = error.message;       
+        alert(errorCode, '/',  errorMessage)   
+      
       })
   }
 

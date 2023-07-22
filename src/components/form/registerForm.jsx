@@ -21,7 +21,7 @@ export const RegistrationForm = () => {
     } 
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
-
+    
     .then(({user}) => {
       dispatch(setUser({
         email:user.email,
