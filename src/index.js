@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import {Provider} from "react-redux"
 import {BrowserRouter} from "react-router-dom";
 import { store } from './redux/store';
-import { App } from './components/App/App';
-import { GlobalStyle } from "./components/App/globalStyles";
+import { App } from './components/app/app'
+import { GlobalStyle } from './components/app/globalStyles'
 import './firebase'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
