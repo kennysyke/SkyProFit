@@ -21,6 +21,7 @@ export const Popup = Styled.div`
     position: absolute;
     top: 100%;
     right: 0;
+    z-index: 1;
     min-width: 160px;
     font-size: 16px;
     white-space: nowrap;
