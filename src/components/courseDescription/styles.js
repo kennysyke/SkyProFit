@@ -1,26 +1,5 @@
 import styled from 'styled-components'
 
-export const CourseContent = styled.div`
-`
-
-export const CourseBannerContent = styled.div`
-  height: 310px;
-  background-image: url(images/courses-wide/yoga.png);
-  border-radius: 20px;
-`
-
-export const TitleCard = styled.h2`
-  color: #000;
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 72px;
-  padding-bottom: 40px;
-  padding-top: 75px;
-  padding-right: 50px;
-  padding-left: 50px;
-`
-
 export const TitleLarge = styled.h1`
   color: #000;
   font-size: 40px;

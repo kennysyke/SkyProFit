@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useGetCoursesQuery } from '../../redux/fitnesApiBase'
 import { ContactContainer } from '../contactContainer/contactContainer'
 import * as Styled from './styles'
+import { CourseBanner } from '../courseBanner/courseBanner'
 
 export function CourseDescription() {
   const { data, isLoading } = useGetCoursesQuery()
@@ -15,10 +16,8 @@ export function CourseDescription() {
   const courses = course.find((cours) => cours._id === params.id)
 
   return (
-    <Styled.CourseContent>
-      <Styled.CourseBannerContent>
-        <Styled.TitleCard>{courses.name}</Styled.TitleCard>
-      </Styled.CourseBannerContent>
+    <>
+      <CourseBanner pic={courses.pic} name={courses.name}></CourseBanner>
       <div>
         <Styled.TitleLarge>Подойдет для вас, если:</Styled.TitleLarge>
         <Styled.StyledOrderedList>
@@ -40,6 +39,6 @@ export function CourseDescription() {
         <Styled.DetailsText>{courses.details}</Styled.DetailsText>
       </div>
       <ContactContainer />
-    </Styled.CourseContent>
+    </>
   )
 }
