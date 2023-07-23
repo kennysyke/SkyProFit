@@ -101,6 +101,17 @@ export const ContainerProgressBar1 = styled.div`
     background: #565eef;
   }
 `;
+
+export const PercentageLabel = styled.span`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
+`
+
+
 // export const ContainerProgressBar2 = styled.div`
 //   position: relative;
 //   display: inline-block;

@@ -22,8 +22,8 @@ export const ProgressBar = ({ exercises }) => {
     }
   }
 
-  const calculateProgressBarWidth = (value) => {
-    return `${(value / 10) * 100}%`
+  const calculateProgressBarWidth = (value, max) => {
+    return `${(value / max) * 100}%`
   }
 
   const extractedText = exercises.map((str) => str.split('(')[0].trim())
@@ -40,8 +40,14 @@ export const ProgressBar = ({ exercises }) => {
         {extractedText.length > 0 && (
           <Styled.InputsBox>
             {extractedText.map((_, index) => (
-              <Styled.ContainerProgressBar1 key={index} progressWidth={calculateProgressBarWidth(inputs[index].value)}>
+              <Styled.ContainerProgressBar1
+                key={index}
+                progressWidth={calculateProgressBarWidth(inputs[index].value, numbers[index])}
+              >
                 <Styled.ProgressBar1 type='range' min='0' max={numbers[index]} value={inputs[index].value} readOnly />
+                <Styled.PercentageLabel>
+                  {Math.round((inputs[index].value / numbers[index]) * 100)}%
+                </Styled.PercentageLabel>
               </Styled.ContainerProgressBar1>
             ))}
           </Styled.InputsBox>
