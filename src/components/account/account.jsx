@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import * as Styled from './styles'
-import { ProfileIcon } from '../headerProfileIcon/profileIcon'
-
 import { MYCARDS } from '../../constants'
 import { ModalWorkout } from '../accWorkoutList/modalWorkoutsList'
 import { Logo } from '../logo/logo'
 import { useAuth } from '../../redux/hooks/useAuth'
+import { HeaderUser } from '../headerUser/headerUser'
 
 export function Profile() {
   const navigate = useNavigate()
@@ -38,7 +37,7 @@ export function Profile() {
       <Styled.ContainerProfile>
         <Styled.HeaderContainer>
           <Logo />
-          <ProfileIcon />
+          <HeaderUser />
         </Styled.HeaderContainer>
         <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
         <Styled.ProfileSubTitle>Логин: {email}</Styled.ProfileSubTitle>
