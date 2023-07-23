@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import * as Styled from './styles'
-import { removeUser, selectEmail } from '../../redux/slices/userSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useAuth } from '../../redux/hooks/useAuth'
+import { removeUser } from '../../redux/slices/userSlice'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+// changes for git to rename the file
+
 export function HeaderUser() {
-  const email = useSelector(selectEmail)
+  const { email } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
   const dispatch = useDispatch()
   const navigate = useNavigate()

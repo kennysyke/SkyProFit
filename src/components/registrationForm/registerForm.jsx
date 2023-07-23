@@ -44,18 +44,20 @@ export const RegistrationForm = () => {
       })
   }
   return (
-    <Styled.LoginForms>
-      <Logo />
-      <Styled.LoginInput type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
-      <Styled.PasswordInput type='password' placeholder='Пароль' onChange={(e) => setPassword(e.target.value)} />
-      <Styled.PasswordInputRep
-        type='password'
-        placeholder='Повторите Пароль'
-        onChange={(e) => setRePassword(e.target.value)}
-      />
-      <Styled.Navigation>
-        <ButtonForm text='Зарегистрироваться' onClick={handleRegistration} />
-      </Styled.Navigation>
-    </Styled.LoginForms>
+    <Styled.ContainerLoginForm>
+      <Styled.LoginForms>
+        <Logo />
+        <Styled.LoginInput type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+        <Styled.PasswordInput type='password' placeholder='Пароль' onChange={(e) => setPassword(e.target.value)} />
+        <Styled.PasswordInputRep
+          type='password'
+          placeholder='Повторите Пароль'
+          onChange={(e) => setRePassword(e.target.value)}
+        />
+        <Styled.Navigation>
+          <ButtonForm text='Зарегистрироваться' onClick={handleRegistration} />
+        </Styled.Navigation>
+      </Styled.LoginForms>
+    </Styled.ContainerLoginForm>
   )
 }

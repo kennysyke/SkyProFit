@@ -1,10 +1,11 @@
-import { LoginForm } from '../../components/loginForm/loginForm'
-import * as Styled from './styles'
+import { Newlogin } from "../../components/form/dataChange/newlogin";
+import * as Styled from "./styles";
 
-export const Loginсhange = () => {
-  return (
-    <Styled.Wrapper>
-      <LoginForm />
-    </Styled.Wrapper>
-  )
-}
+export const Loginсhange = () => {   
+ 
+    return (
+      <Styled.Wrapper>   
+        <Newlogin/>    
+      </Styled.Wrapper>
+    );
+  }

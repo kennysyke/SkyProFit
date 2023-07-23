@@ -4,10 +4,7 @@ import { CardsContainer } from '../cardContainerMain/cardsContainer'
 
 export function Center() {
   const anchorHandler = () => {
-    window.scrollTo({
-      behavior: 'smooth',
-      top: 0,
-    })
+    window.scrollTo(0, 0)
   }
   return (
     <Styled.CenterContainer>

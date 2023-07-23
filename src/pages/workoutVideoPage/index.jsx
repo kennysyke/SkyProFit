@@ -1,3 +1,4 @@
+import { Header } from '../../components/headerHeader/header'
 import { Player } from '../../components/VPplayer/Player'
 import { Exercises } from '../../components/VPexercises/exercises'
 import { ProgressBar } from '../../components/VPprogress/progress'
@@ -5,7 +6,6 @@ import * as Styled from './styles'
 
 import { useGetWorkoutsQuery } from '../../redux/workoutsApi'
 import { useParams } from 'react-router-dom'
-import { Header } from '../../components/header/header'
 
 export const WorkoutVideoPage = () => {
   const { data, isLoading } = useGetWorkoutsQuery()

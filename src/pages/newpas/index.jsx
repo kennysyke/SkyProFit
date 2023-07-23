@@ -1,10 +1,10 @@
-import { NewPasword } from '../../components/newPassword/newPassword'
-import * as Styled from './styles'
+import { Newpas } from "../../components/form/dataChange/newpas";
+import * as Styled from "./styles";
 
-export const Pasсhange = () => {
-  return (
-    <Styled.Wrapper>
-      <NewPasword />
-    </Styled.Wrapper>
-  )
-}
+export const Pasсhange = () => {     
+    return (
+      <Styled.Wrapper>   
+        <Newpas/>    
+      </Styled.Wrapper>
+    );
+  }
