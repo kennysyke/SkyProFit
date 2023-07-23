@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import * as Styled from './styles'
 import { useNavigate } from 'react-router-dom'
-import { Logo } from '../main/header/logo'
 import { ProfileIcon } from '../main/header/profileIcon'
 
 import { MYCARDS } from '../../constants'
 import { ModalWorkout } from './modalWorkoutsList'
-
+import { Logo } from '../logo/logo'
+import { useAuth } from '../../redux/hooks/useAuth'
 export function Profile() {
   const navigate = useNavigate()
 
@@ -28,6 +28,10 @@ export function Profile() {
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
+  const { email } = useAuth()
+
+  const password = localStorage.getItem('userPassword')
+
   return (
     <div>
       <Styled.ContainerProfile>
@@ -36,32 +40,24 @@ export function Profile() {
           <ProfileIcon />
         </Styled.HeaderContainer>
         <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
-        <Styled.ProfileSubTitle>Логин: sergey.petrov96</Styled.ProfileSubTitle>
-        <Styled.ProfileSubTitle>Пароль: 4fkhdj880d</Styled.ProfileSubTitle>
+        <Styled.ProfileSubTitle>Логин: {email}</Styled.ProfileSubTitle>
+        <Styled.ProfileSubTitle>Пароль: {password}</Styled.ProfileSubTitle>
         <Styled.BtnBox>
-          <Styled.BtnChange onClick={handleLoginChange}>
-            Редактировать логин
-          </Styled.BtnChange>
-          <Styled.BtnChange onClick={handlePasChange}>
-            Редактировать пароль
-          </Styled.BtnChange>
+          <Styled.BtnChange onClick={handleLoginChange}>Редактировать логин</Styled.BtnChange>
+          <Styled.BtnChange onClick={handlePasChange}>Редактировать пароль</Styled.BtnChange>
         </Styled.BtnBox>
       </Styled.ContainerProfile>
 
       <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
-        {MYCARDS.map((card, i) => (
-          <Styled.CourseCard
-            src={card.image}
-            alt={card.alt}
-            key={i}
-            onClick={() => handleOpenModal(card.id)}
-          />
+        {MYCARDS.map((card) => (
+          <Styled.CoursesCards>
+            <Styled.CourseCard src={card.image} alt={card.alt} />
+            <Styled.GoBtn onClick={() => handleOpenModal(card.id)}>Перейти →</Styled.GoBtn>
+          </Styled.CoursesCards>
         ))}
       </Styled.CoursesContainer>
-      {isModalOpen && (
-        <ModalWorkout cardId={selectedCardId} onClose={handleCloseModal} />
-      )}
+      {isModalOpen && <ModalWorkout cardId={selectedCardId} onClose={handleCloseModal} />}
     </div>
   )
 }

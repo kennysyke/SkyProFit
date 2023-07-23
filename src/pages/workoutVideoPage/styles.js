@@ -1,8 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const VideoTitleBlock = styled.div`
- 
-`;
+export const VideoTitleBlock = styled.div``
 export const VideoTitle = styled.h1`
   color: #000;
   font-size: 48px;
@@ -10,7 +8,7 @@ export const VideoTitle = styled.h1`
   font-weight: 400;
   line-height: 56px;
   padding-bottom: 40px;
-`;
+`
 
 export const VideoSubTitle = styled.p`
   color: #000;
@@ -19,7 +17,7 @@ export const VideoSubTitle = styled.p`
   font-weight: 400;
   line-height: 40px;
   padding-bottom: 40px;
-`;
+`
 
 export const ExercisesProgressBox = styled.div`
   display: flex;
@@ -27,11 +25,9 @@ export const ExercisesProgressBox = styled.div`
   width: 100%;
   height: 638px;
   padding-top: 75px;
-`;
+`
 
 export const StyledContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  padding-left: calc(50% - 720px);
-  padding-right: calc(50% - 720px);
-`;
+  padding-left: calc(50% - 580px);
+  padding-right: calc(50% - 580px);
+`
