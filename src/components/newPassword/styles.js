@@ -12,7 +12,7 @@ export const NewPasForm = styled.div`
 `
 
 export const LabelForm = styled.div`
-  width: 278.5px;
+  width: 278px;
   height: 35px;
 `
 

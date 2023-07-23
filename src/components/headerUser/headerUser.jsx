@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import * as Styled from './styles'
-import { removeUser, selectEmail } from '../../redux/slices/userSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { removeUser } from '../../redux/slices/userSlice'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 export function HeaderUser() {
-  const email = useSelector(selectEmail)
+  const email = localStorage.getItem('userEmail')
   const [isOpen, setIsOpen] = useState(false)
   const dispatch = useDispatch()
   const navigate = useNavigate()
