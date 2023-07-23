@@ -77,5 +77,5 @@ export const PercentageLabel = styled.span`
   top: 50%;
   transform: translate(-50%, -50%);
   font-size: 14px;
-  color: white;
+  color: white; 
 `
