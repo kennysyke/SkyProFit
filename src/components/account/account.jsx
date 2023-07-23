@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import * as Styled from './styles'
 import { useNavigate } from 'react-router-dom'
+import * as Styled from './styles'
 import { ProfileIcon } from '../headerProfileIcon/profileIcon'
 
 import { MYCARDS } from '../../constants'
 import { ModalWorkout } from '../accWorkoutList/modalWorkoutsList'
-import { Logo } from '../logo/Logo'
+import { Logo } from '../logo/logo'
 import { useAuth } from '../../redux/hooks/useAuth'
 
 export function Profile() {
