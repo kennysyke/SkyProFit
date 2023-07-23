@@ -50,16 +50,14 @@ export const LoginForm = () => {
   }
 
   return (
-    <Styled.ContainerLoginForm>
-      <Styled.LoginForms>
-        <Logo />
-        <Styled.LoginInput type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
-        <Styled.PasswordInput type='password' placeholder='Пароль' onChange={(e) => setPassword(e.target.value)} />
-        <Styled.Navigation>
-          <ButtonForm onClick={handleLogin} text='Войти' />
-          <Styled.BtnRegistration onClick={handleRegistration}>Зарегистрироваться</Styled.BtnRegistration>
-        </Styled.Navigation>
-      </Styled.LoginForms>
-    </Styled.ContainerLoginForm>
+    <Styled.LoginForms>
+      <Logo />
+      <Styled.LoginInput type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
+      <Styled.PasswordInput type='password' placeholder='Пароль' onChange={(e) => setPassword(e.target.value)} />
+      <Styled.Navigation>
+        <ButtonForm onClick={handleLogin} text='Войти' />
+        <Styled.BtnRegistration onClick={handleRegistration}>Зарегистрироваться</Styled.BtnRegistration>
+      </Styled.Navigation>
+    </Styled.LoginForms>
   )
 }

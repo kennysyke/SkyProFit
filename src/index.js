@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import { store } from './redux/store'
 import { App } from './components/app/app'
-import { GlobalStyle } from './components/app/globalStyles'
 import './firebase'
+import { GlobalStyle } from './components/app/globalStyles'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

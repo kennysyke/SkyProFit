@@ -1,5 +1,5 @@
 import { Center } from '../../components/centerMain/center'
-import { Header } from '../../components/headerHeader/header'
+import { Header } from '../../components/header/header'
 import { Title } from '../../components/titileMain/title'
 import * as Styled from './styles'
 
