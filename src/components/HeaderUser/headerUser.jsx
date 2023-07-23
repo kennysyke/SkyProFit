@@ -5,6 +5,8 @@ import { removeUser } from '../../redux/slices/userSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
+// changes for git to rename the file
+
 export function HeaderUser() {
   const { email } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
