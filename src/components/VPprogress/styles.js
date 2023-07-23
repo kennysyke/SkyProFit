@@ -70,3 +70,12 @@ export const ContainerProgressBar1 = styled.div`
 export const ProgressBar1 = styled.input`
   opacity: 0%;
 `
+
+export const PercentageLabel = styled.span`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
+`
