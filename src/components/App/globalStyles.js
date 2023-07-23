@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-
-
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +26,6 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
   
-  
   @font-face {
     font-family: 'StratosSkyeng';
     src: local("StratosSkyeng"), local("StratosSkyeng"), url("../fonts/Stratos-Regular.woff2") format("woff2"), url("../fonts/Stratos-Regular.woff") format("woff");
@@ -38,10 +35,8 @@ export const GlobalStyle = createGlobalStyle`
   
   html,
   body {
-    width: 100vw;
+    background: #FFF;
     min-height: 100vh;
     font-family: 'StratosSkyeng', sans-serif;   
-
   }
-
   `

@@ -1,11 +1,5 @@
-import { AppRoutes } from "../../routes";
-import * as Styled from "./styles";
+import { AppRoutes } from '../../routes'
 
 export function App() {
-  
-  return (
-    <Styled.Wrapper>
-      <AppRoutes />
-    </Styled.Wrapper>
-  );
+  return <AppRoutes />
 }

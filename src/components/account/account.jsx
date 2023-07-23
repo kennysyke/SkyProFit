@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 import * as Styled from './styles'
 import { MYCARDS } from '../../constants'
 import { ModalWorkout } from '../accWorkoutList/modalWorkoutsList'
-import { Logo } from '../logo/logo'
 import { useAuth } from '../../redux/hooks/useAuth'
 import { HeaderUser } from '../headerUser/headerUser'
+import { Logo } from '../logo/logo'
 
 export function Profile() {
   const navigate = useNavigate()
