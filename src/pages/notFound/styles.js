@@ -1,9 +1,12 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const Wrapper = styled.div`
-  min-height: 100vh;
-  background-color: #d0cece;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
+export const Wrapper = styled.div` 
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    background-color:#D0CECE;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+`;

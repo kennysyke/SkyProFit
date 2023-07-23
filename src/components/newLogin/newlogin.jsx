@@ -37,11 +37,13 @@ export function Newlogin() {
       })
   }
   return (
-    <Styled.NewLoginForm>
-      <Logo />
-      <Styled.LabelForm>Новый логин</Styled.LabelForm>
-      <Styled.LoginInput type='login' placeholder='Логин' onChange={(e) => setLogin(e.target.value)} />
-      <Styled.BtnSave onClick={reLogin}>Сохранить</Styled.BtnSave>
-    </Styled.NewLoginForm>
+    <Styled.ContainerForm>
+      <Styled.NewLoginForm>
+        <Logo />
+        <Styled.LabelForm>Новый логин</Styled.LabelForm>
+        <Styled.LoginInput type='login' placeholder='Логин' onChange={(e) => setLogin(e.target.value)} />
+        <Styled.BtnSave onClick={reLogin}>Сохранить</Styled.BtnSave>
+      </Styled.NewLoginForm>
+    </Styled.ContainerForm>
   )
 }
