@@ -1,6 +1,6 @@
 import React from 'react'
 import * as Styled from './styles'
-import { Logo } from '../logo/Logo'
+import { Logo } from '../logo/logo'
 import { getAuth, onAuthStateChanged, updateEmail } from 'firebase/auth'
 import { setUser } from '../../redux/slices/userSlice'
 import { useState } from 'react'

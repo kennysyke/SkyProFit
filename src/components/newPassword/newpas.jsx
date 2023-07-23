@@ -1,6 +1,6 @@
 import React from 'react'
 import * as Styled from './styles'
-import { Logo } from '../logo/Logo'
+import { Logo } from '../logo/logo'
 import { getAuth, updatePassword } from 'firebase/auth'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'

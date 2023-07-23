@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { setUser } from '../../redux/slices/userSlice'
 import { ButtonForm } from '../buttonForm/ButtonForm'
-import { Logo } from '../logo/Logo'
+import { Logo } from '../logo/logo'
 
 export const LoginForm = () => {
   const [email, setEmail] = useState()

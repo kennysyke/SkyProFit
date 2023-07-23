@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { setUser } from '../../redux/slices/userSlice'
 import { ButtonForm } from '../buttonForm/ButtonForm'
-import { Logo } from '../logo/Logo'
+import { Logo } from '../logo/logo'
 
 export const RegistrationForm = () => {
   const [email, setEmail] = useState()

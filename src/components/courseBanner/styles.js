@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const CourseContent = styled.div` 
+export const CourseContent = styled.div`
   width: 1160px;
   min-height: 100%;
-`;
+`
 
 export const TitleCard = styled.h2`
   color: #000;
@@ -15,8 +15,7 @@ export const TitleCard = styled.h2`
   padding-top: 75px;
   padding-right: 50px;
   padding-left: 50px;
-`;
-
+`
 
 export const TitleLarge = styled.h1`
   color: #000;
@@ -26,14 +25,14 @@ export const TitleLarge = styled.h1`
   line-height: 48px;
   padding-bottom: 40px;
   padding-top: 75px;
-`;
+`
 
 export const StyledTwoColumnList = styled.ul`
   column-count: 2;
   column-gap: 20px;
   padding-bottom: 75px;
   padding-left: 25px;
-`;
+`
 
 export const TextListSmall = styled.li`
   color: #000;
@@ -42,7 +41,7 @@ export const TextListSmall = styled.li`
   font-weight: 400;
   line-height: 32px;
   padding-left: 10px;
-`;
+`
 
 export const DetailsText = styled.h3`
   color: #000;
@@ -51,7 +50,7 @@ export const DetailsText = styled.h3`
   font-weight: 400;
   line-height: 32px;
   padding-bottom: 75px;
-`;
+`
 
 export const StyledListItem = styled.li`
   counter-increment: my-counter;
@@ -79,7 +78,7 @@ export const StyledListItem = styled.li`
     align-items: center;
     gap: 13.359px;
   }
-`;
+`
 
 export const StyledOrderedList = styled.ol`
   display: flex;
@@ -87,13 +86,13 @@ export const StyledOrderedList = styled.ol`
   counter-reset: my-counter;
   padding-left: 0;
   justify-content: space-between;
-`;
+`
 
 export const LargeImage = styled.img`
   width: 100%;
   height: 20%;
   padding-top: 75px;
-`;
+`
 export const ContactContainer = styled.div`
   width: 100%;
   height: 20%;
@@ -102,7 +101,7 @@ export const ContactContainer = styled.div`
   background: #f9ebff;
   display: flex;
   flex-direction: row;
-`;
+`
 
 export const LeftContainer = styled.div`
   display: flex;
@@ -110,13 +109,13 @@ export const LeftContainer = styled.div`
   gap: 40px;
   padding-top: 55px;
   padding-left: 52px;
-`;
+`
 
 export const ContactImage = styled.img`
   width: 345.795px;
   height: 337.526px;
   flex-shrink: 0;
-`;
+`
 
 export const ContactBtn = styled.button`
   width: 275px;
@@ -126,7 +125,7 @@ export const ContactBtn = styled.button`
   background: #580ea2;
   color: white;
   font-size: 18px;
-`;
+`
 
 export const ContactText = styled.h2`
   color: #000;
@@ -134,10 +133,10 @@ export const ContactText = styled.h2`
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
-`;
+`
 export const CourseBannerContent = styled.div`
   width: 1160px;
   height: 310px;
-  background-image: url(images/courses-wide/yoga.png);
+  background-image: url(/images/courses-wide/yoga.png);
   border-radius: 20px;
-`;
+`
