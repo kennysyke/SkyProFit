@@ -5,7 +5,7 @@ import { getAuth, updatePassword } from 'firebase/auth'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export function Newpas() {
+export function NewPasword() {
   const [pass, setPass] = useState()
   const [rePass, setRePass] = useState()
   const navigate = useNavigate()
@@ -34,18 +34,16 @@ export function Newpas() {
       })
   }
   return (
-    <Styled.ContainerForm>
-      <Styled.NewPasForm>
-        <Logo />
-        <Styled.LabelForm>Новый пароль</Styled.LabelForm>
-        <Styled.PasswordInput type='password' placeholder='Пароль' onChange={(e) => setPass(e.target.value)} />
-        <Styled.PasswordInput
-          type='password'
-          placeholder='Повторите пароль'
-          onChange={(e) => setRePass(e.target.value)}
-        />
-        <Styled.BtnSave onClick={rePassword}>Сохранить</Styled.BtnSave>
-      </Styled.NewPasForm>
-    </Styled.ContainerForm>
+    <Styled.NewPasForm>
+      <Logo />
+      <Styled.LabelForm>Новый пароль</Styled.LabelForm>
+      <Styled.PasswordInput type='password' placeholder='Пароль' onChange={(e) => setPass(e.target.value)} />
+      <Styled.PasswordInput
+        type='password'
+        placeholder='Повторите пароль'
+        onChange={(e) => setRePass(e.target.value)}
+      />
+      <Styled.BtnSave onClick={rePassword}>Сохранить</Styled.BtnSave>
+    </Styled.NewPasForm>
   )
 }

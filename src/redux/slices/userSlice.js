@@ -23,3 +23,6 @@ const userSlice = createSlice({
 export const { setUser, removeUser } = userSlice.actions
 
 export default userSlice.reducer
+
+export const selectEmail = (state) => state.user.email
+export const selectToken = (state) => state.user.token
