@@ -12,6 +12,7 @@ import { Pasсhange } from '../pages/newpas'
 
 export const AppRoutes = () => {
   const token = localStorage.getItem('token')
+  console.log(token)
   return (
     <Routes>
       <Route path='/' element={<MainPage />} />

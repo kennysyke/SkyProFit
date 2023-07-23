@@ -35,6 +35,7 @@ export const LoginForm = () => {
         if (user) {
           navigate('/account')
           localStorage.setItem('userPassword', password)
+          localStorage.setItem('userEmail', email)
         }
         return
       })

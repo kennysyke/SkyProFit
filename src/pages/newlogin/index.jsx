@@ -1,10 +1,10 @@
-import { LoginForm } from '../../components/loginForm/loginForm'
+import { Newlogin } from '../../components/newLogin/newlogin'
 import * as Styled from './styles'
 
 export const Loginсhange = () => {
   return (
     <Styled.Wrapper>
-      <LoginForm />
+      <Newlogin />
     </Styled.Wrapper>
   )
 }

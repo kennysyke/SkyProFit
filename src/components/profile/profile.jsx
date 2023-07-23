@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import * as Styled from './styles'
 import { MYCARDS } from '../../constants'
 import { ModalWorkout } from '../accWorkoutList/modalWorkoutsList'
-import { useAuth } from '../../redux/hooks/useAuth'
 
 export function Profile() {
   const navigate = useNavigate()
@@ -26,9 +25,9 @@ export function Profile() {
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
-  const { email } = useAuth()
 
   const password = localStorage.getItem('userPassword')
+  const email = localStorage.getItem('userEmail')
 
   return (
     <>
@@ -45,7 +44,7 @@ export function Profile() {
       <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
         {MYCARDS.map((card) => (
-          <Styled.CoursesCards>
+          <Styled.CoursesCards key={card.id}>
             <Styled.CourseCard src={card.image} alt={card.alt} />
             <Styled.GoBtn onClick={() => handleOpenModal(card.id)}>Перейти →</Styled.GoBtn>
           </Styled.CoursesCards>
