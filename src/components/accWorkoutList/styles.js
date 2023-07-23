@@ -25,6 +25,7 @@ export const ModalContent = styled.div`
     justify-content: center;
 }
 `
+
 export const ModalHeader = styled.h3`
   color: #000;
   font-size: 32px;
@@ -33,6 +34,17 @@ export const ModalHeader = styled.h3`
   line-height: 40px;
   padding-bottom: 30px;
 `
+
+export const CloseButton = styled.button`
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  background: white;
+  padding: 2px;
+  border: none;
+`
+
 export const WorkoutList = styled.div`
   color: #000;
   font-size: 32px;
@@ -61,14 +73,4 @@ export const WorkoutItem = styled.div`
   line-height: 18px;
   letter-spacing: 0.016px;
   padding-left: 10px;
-`
-
-export const CloseButton = styled.button`
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-  background: white;
-  padding: 2px;
-  border: none;
 `

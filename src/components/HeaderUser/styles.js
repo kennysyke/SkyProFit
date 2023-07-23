@@ -19,8 +19,10 @@ export const Email = Styled.div`
 
 export const Popup = Styled.div`
     position: absolute;
+    background: #fff;
     top: 100%;
     right: 0;
+    z-index: 1;
     min-width: 160px;
     font-size: 16px;
     white-space: nowrap;
@@ -36,6 +38,7 @@ export const NavLink = Styled(Link)`
     color: #000;
     align-self: flext-start;
 `
+
 export const ArrowIcon = Styled.svg`
     cursor: pointer;
     transition: transform 0.3s ease;
