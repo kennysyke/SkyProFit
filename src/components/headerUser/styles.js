@@ -36,7 +36,7 @@ export const Popup = Styled.div`
 
 export const NavLink = Styled(Link)`
     color: #000;
-    align-self: flext-start;
+    align-self: flex-start;
 `
 export const ArrowIcon = Styled.svg`
     cursor: pointer;
