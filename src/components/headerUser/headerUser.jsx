@@ -1,24 +1,9 @@
-import { useState } from 'react'
+
 import * as Styled from './styles'
-import { removeUser } from '../../redux/slices/userSlice'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
-export function HeaderUser() {
+export function HeaderUser({onLogout, togglePopup,  isOpen}) {
   const email = localStorage.getItem('userEmail')
-  const [isOpen, setIsOpen] = useState(false)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  const onLogout = () => {
-    dispatch(removeUser())
-    localStorage.clear()
-    navigate('/')
-  }
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen)
-  }
+ 
 
   return (
     <Styled.User>
