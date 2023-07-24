@@ -21,6 +21,7 @@ export const Popup = Styled.div`
     position: absolute;
     top: 100%;
     right: 0;
+    z-index: 1;
     min-width: 160px;
     font-size: 16px;
     white-space: nowrap;
@@ -29,12 +30,13 @@ export const Popup = Styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background: #FFF;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 `
 
 export const NavLink = Styled(Link)`
     color: #000;
-    align-self: flext-start;
+    align-self: flex-start;
 `
 export const ArrowIcon = Styled.svg`
     cursor: pointer;

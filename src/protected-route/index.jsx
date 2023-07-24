@@ -1,10 +1,10 @@
-import React from 'react';
-import { Navigate, Outlet } from "react-router-dom";
+import React from 'react'
+import { Navigate, Outlet } from 'react-router-dom'
 
-export const ProtectedRoute = ({  redirectPath = "/login", isAllowed }) => {
+export const ProtectedRoute = ({ redirectPath = '/', isAllowed }) => {
   if (!isAllowed) {
-    return  <Navigate to={redirectPath} replace={true} />;
+    return <Navigate to={redirectPath} replace={true} />
   }
 
-  return  <Outlet />;
-};
+  return <Outlet />
+}

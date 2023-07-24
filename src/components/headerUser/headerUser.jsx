@@ -1,27 +1,9 @@
-import { useState } from 'react'
+
 import * as Styled from './styles'
-import { useAuth } from '../../redux/hooks/useAuth'
-import { removeUser } from '../../redux/slices/userSlice'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
-// changes for git to rename the file
-
-export function HeaderUser() {
-  const { email } = useAuth()
-  const [isOpen, setIsOpen] = useState(false)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  const onLogout = () => {
-    dispatch(removeUser())
-    localStorage.clear()
-    navigate('/')
-  }
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen)
-  }
+export function HeaderUser({onLogout, togglePopup,  isOpen}) {
+  const email = localStorage.getItem('userEmail')
+ 
 
   return (
     <Styled.User>

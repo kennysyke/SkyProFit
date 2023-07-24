@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
-import * as Styled from './styles'
 import { useNavigate } from 'react-router-dom'
-import { ProfileIcon } from '../main/header/profileIcon'
-
+import * as Styled from './styles'
 import { MYCARDS } from '../../constants'
-import { ModalWorkout } from './modalWorkoutsList'
-import { Logo } from '../logo/logo'
-import { useAuth } from '../../redux/hooks/useAuth'
+import { ModalWorkout } from '../accWorkoutList/modalWorkoutsList'
+
 export function Profile() {
   const navigate = useNavigate()
 
@@ -28,17 +25,13 @@ export function Profile() {
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
-  const { email } = useAuth()
 
   const password = localStorage.getItem('userPassword')
+  const email = localStorage.getItem('userEmail')
 
   return (
-    <div>
+    <>
       <Styled.ContainerProfile>
-        <Styled.HeaderContainer>
-          <Logo />
-          <ProfileIcon />
-        </Styled.HeaderContainer>
         <Styled.ProfileTitle>Мой профиль</Styled.ProfileTitle>
         <Styled.ProfileSubTitle>Логин: {email}</Styled.ProfileSubTitle>
         <Styled.ProfileSubTitle>Пароль: {password}</Styled.ProfileSubTitle>
@@ -51,13 +44,13 @@ export function Profile() {
       <Styled.ProfileTitle>Мои курсы</Styled.ProfileTitle>
       <Styled.CoursesContainer>
         {MYCARDS.map((card) => (
-          <Styled.CoursesCards>
+          <Styled.CoursesCards key={card.id}>
             <Styled.CourseCard src={card.image} alt={card.alt} />
             <Styled.GoBtn onClick={() => handleOpenModal(card.id)}>Перейти →</Styled.GoBtn>
           </Styled.CoursesCards>
         ))}
       </Styled.CoursesContainer>
       {isModalOpen && <ModalWorkout cardId={selectedCardId} onClose={handleCloseModal} />}
-    </div>
+    </>
   )
 }

@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 
-
 * {
     margin: 0;
     padding: 0;
@@ -38,10 +37,9 @@ export const GlobalStyle = createGlobalStyle`
   
   html,
   body {
-    width: 100vw;
+    background: #FFF;
     min-height: 100vh;
     font-family: 'StratosSkyeng', sans-serif;   
 
   }
-
   `

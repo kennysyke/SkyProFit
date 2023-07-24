@@ -1,10 +1,10 @@
 import React from 'react'
 import * as Styled from './styles'
 
-export function CourseBanner({ src, alt }) {
+export function CourseBanner({ pic, name }) {
   return (
-    <Styled.CourseBannerContent>
-      <Styled.LargeImage src={src} alt={alt} />
-    </Styled.CourseBannerContent>
+    <Styled.Pic src={pic}>
+      <Styled.Name>{name}</Styled.Name>
+    </Styled.Pic>
   )
 }

@@ -2,8 +2,6 @@ import React from 'react'
 import * as Styled from './styles'
 import { Link } from 'react-router-dom'
 
-// changes for git to rename the file
-
 export const Logo = () => {
   const isMainPage = window.location.pathname === '/' ? true : false
   const logoColor = isMainPage ? 'white' : 'black'
