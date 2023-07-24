@@ -2,7 +2,7 @@ import React from 'react'
 import * as Styled from './styles'
 import { useSelector } from 'react-redux'
 
-export const ProgressBar = ({ exercises }) => {
+export const ProgressBar = ({ exercises, users }) => {
   const inputs = useSelector((state) => [
     { id: 1, value: state.modalWindow.input1 },
     { id: 2, value: state.modalWindow.input2 },
@@ -10,6 +10,8 @@ export const ProgressBar = ({ exercises }) => {
     { id: 4, value: state.modalWindow.input4 },
     { id: 5, value: state.modalWindow.input5 },
   ])
+
+  console.log(users)
 
   const numbers = []
 

@@ -20,6 +20,7 @@ export const WorkoutVideoPage = () => {
   console.log(workouts)
 
   console.log(workout.source)
+  console.log(workout.users)
 
   return (
     <Styled.StyledContainer>
@@ -30,8 +31,8 @@ export const WorkoutVideoPage = () => {
       </Styled.VideoTitleBlock>
       <Player source={workout.source} />
       <Styled.ExercisesProgressBox>
-        <Exercises exercises={workout.exercises} />
-        <ProgressBar exercises={workout.exercises} />
+        <Exercises exercises={workout.exercises} users={workout.users} />
+        <ProgressBar exercises={workout.exercises} users={workout.users} />
       </Styled.ExercisesProgressBox>
     </Styled.StyledContainer>
   )
