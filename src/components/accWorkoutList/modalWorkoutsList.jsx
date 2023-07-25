@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import { useGetWorkoutsQuery } from '../../redux/workoutsApi'
 
 export const ModalWorkout = ({ onClose, cardId }) => {
- 
   const { data: coursesData, isLoading: isCoursesLoading } = useGetCoursesQuery()
   const { data: workoutsData, isLoading: isWorkoutsLoading } = useGetWorkoutsQuery()
 
@@ -34,15 +33,26 @@ export const ModalWorkout = ({ onClose, cardId }) => {
           Выберите тренировку
           <Styled.CloseButton onClick={handleClose}>X</Styled.CloseButton>
         </Styled.ModalHeader>
-
         <Styled.WorkoutList>
-          {workouts.map((w) => (
-            <Link to={`/account/${w._id}`} key={w._id}>
-              <Styled.WorkoutItem>{w.name}</Styled.WorkoutItem>
-            </Link>
-          ))}
+          {workouts
+            .sort((a, b) => extractMainName(a.name).localeCompare(extractMainName(b.name)))
+            .map((w) => (
+              <Link to={`/account/${w._id}`} key={w._id}>
+                <Styled.WorkoutItem>{w.name}</Styled.WorkoutItem>
+              </Link>
+            ))}
         </Styled.WorkoutList>
       </Styled.ModalContent>
     </Styled.ModalContainer>
   )
+}
+
+function extractMainName(name) {
+  // Регулярное выражение для выделения текста после второго символа "/"
+  const regex = /\/.*?\/(.*?)(\/|\||$)/
+  const match = name.match(regex)
+  if (match && match[1]) {
+    return match[1].trim()
+  }
+  return name
 }
