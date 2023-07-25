@@ -12,9 +12,9 @@ export const workoutsApi = createApi({
     }),
 
     updateUserData: builder.mutation({
-      query: (updatedUsers) => ({
-        url: '/workouts.json',
-        method: 'POST',
+      query: ({ updatedUsers, workoutId }) => ({
+        url: `/workouts/${workoutId}/users.json`,
+        method: 'PATCH',
         body: updatedUsers,
       }),
     }),

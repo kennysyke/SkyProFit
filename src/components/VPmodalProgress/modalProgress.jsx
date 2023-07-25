@@ -1,65 +1,36 @@
 import React, { useState } from 'react'
 import * as Styled from './styles'
-import { useDispatch } from 'react-redux'
-import { setInput1, setInput2, setInput3, setInput4, setInput5 } from '../../redux/slices/modal-store'
 import { ModalOk } from '../VPmodalOk/modalOk'
-import { useUpdateUserDataMutation } from '../../redux/workoutsApi'
+import { useUpdateUserDataMutation, useGetWorkoutsQuery } from '../../redux/workoutsApi'
 
-export const ModalWindow = ({ onClose, exercises, users }) => {
+export const ModalWindow = ({ onClose, exercises }) => {
   const userId = localStorage.getItem('userId')
   const [showModalOk, setShowModalOk] = useState(false)
-  console.log(exercises)
-  console.log(userId)
-  console.log(users)
 
-  const dispatch = useDispatch()
+  const [inputValues, setInputValues] = useState({ [userId]: [] })
   const [updateUserData, { isLoading: isUpdating }] = useUpdateUserDataMutation()
+
+  const { refetch } = useGetWorkoutsQuery()
+
+  const handleInputChange = (e, inputId) => {
+    const newValues = { ...inputValues }
+    newValues[userId][Number(inputId.replace('input', '')) - 1] = e.target.value
+    setInputValues(newValues)
+  }
 
   const handleSubmit = async () => {
     if (!isUpdating) {
       try {
-        const { data } = await updateUserData(users)
+        let path = window.location.pathname
+        let workoutId = path.split('/')[2]
+        const { data } = await updateUserData({ updatedUsers: inputValues, workoutId })
         console.log('Updated user data:', data)
-        console.log('Updated user name:', data.name)
         setShowModalOk(true)
-      } catch (error) {
-        console.error('Error updating user data:', error)
+        console.log(inputValues)
+        refetch()
+      } catch (err) {
+        console.error(err)
       }
-    }
-  }
-
-  const handleInputChange = (e, inputName) => {
-    const inputValue = e.target.value
-    const updatedUsers = { ...users }
-
-    console.log('userId:', userId)
-    console.log('inputName:', inputName)
-    console.log('inputValue:', inputValue)
-    console.log('updatedUsers before update:', updatedUsers)
-
-    switch (inputName) {
-      case 'input1':
-        dispatch(setInput1(Number(inputValue)))
-        updatedUsers[userId] = Number(inputValue)
-        break
-      case 'input2':
-        dispatch(setInput2(Number(inputValue)))
-        updatedUsers[userId].push(Number(inputValue))
-        break
-      case 'input3':
-        dispatch(setInput3(Number(inputValue)))
-        updatedUsers[userId].push(Number(inputValue))
-        break
-      case 'input4':
-        dispatch(setInput4(Number(inputValue)))
-        updatedUsers[userId].push(Number(inputValue))
-        break
-      case 'input5':
-        dispatch(setInput5(Number(inputValue)))
-        updatedUsers[userId].push(Number(inputValue))
-        break
-      default:
-        break
     }
   }
 
