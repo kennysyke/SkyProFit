@@ -22,8 +22,9 @@ export const PasswordInput = styled.input`
   border: none;
   border-bottom: 1px solid #d0cece;
   margin-bottom: 60px;
-  padding-bottom: 8px;
-
+  font-size: 18px;
+  padding-left: 5px;
+  padding-right: 5px;
   &::placeholder {
     color: #e1e1e1;
     font-style: normal;

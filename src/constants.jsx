@@ -1,31 +1,31 @@
 export const CARDS = [
     {
         id: 'yo2g4f',
-        image: 'images/courses-mini/yoga-card.png',
+        image: 'images/courses-mini/yo2g4f.png',
         alt: 'Course yoga' 
         
     },
     {
         id: 'ab1c3f',
-        image: 'images/courses-mini/stretching-card.png',
+        image: 'images/courses-mini/ab1c3f.png',
         alt: 'Course stretching' 
         
     },
     {
         id: 'dan7it',
-        image: 'images/courses-mini/dancefit-card.png',
+        image: 'images/courses-mini/dan7it.png',
         alt: 'Course dancefit' 
         
     },
     {
         id: 'st3p4e',
-        image: 'images/courses-mini/step-card.png',
+        image: 'images/courses-mini/st3p4e.png',
         alt: 'Course step' 
         
     },
     {
         id: 'bod73x',
-        image: 'images/courses-mini/bodyflex-card.png',
+        image: 'images/courses-mini/bod73x.png',
         alt: 'Course bodyflex' 
         
     },

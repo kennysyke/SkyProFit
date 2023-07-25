@@ -6,7 +6,6 @@ import { useUpdateUserDataMutation, useGetWorkoutsQuery } from '../../redux/work
 export const ModalWindow = ({ onClose, exercises }) => {
   const userId = localStorage.getItem('userId')
   const [showModalOk, setShowModalOk] = useState(false)
-
   const [inputValues, setInputValues] = useState({ [userId]: [] })
   const [updateUserData, { isLoading: isUpdating }] = useUpdateUserDataMutation()
 

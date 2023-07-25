@@ -12,15 +12,11 @@ export const WorkoutVideoPage = () => {
   const params = useParams()
 
   if (isLoading) {
-    console.log(`Идет подгрзука данных`)
+   return <h1>Идет подгрузка данных</h1>
   }
+
   const workouts = Object.values(data)
   const workout = workouts.find((w) => w._id === params.workoutid)
-
-  console.log(workouts)
-
-  console.log(workout.source)
-  console.log(workout.users)
 
   return (
     <Styled.StyledContainer>
@@ -31,8 +27,8 @@ export const WorkoutVideoPage = () => {
       </Styled.VideoTitleBlock>
       <Player source={workout.source} />
       <Styled.ExercisesProgressBox>
-        <Exercises exercises={workout.exercises} users={workout.users} />
-        <ProgressBar exercises={workout.exercises} users={workout.users} />
+        {workout.exercises ? <Exercises exercises={workout.exercises} users={workout.users} />: ''}
+        {workout.exercises ? <ProgressBar exercises={workout.exercises} users={workout.users}  />: ''}
       </Styled.ExercisesProgressBox>
     </Styled.StyledContainer>
   )
