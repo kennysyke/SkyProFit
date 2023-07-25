@@ -30,7 +30,7 @@ export function Profile() {
 
   const password = localStorage.getItem('userPassword')
   const email = localStorage.getItem('userEmail')
-if (isLoading) {
+  if (isLoading) {
     return <h1>Идет подгрзука данных</h1>
   }
   const userCourses = Object.values(data)
