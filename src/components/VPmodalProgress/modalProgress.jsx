@@ -6,7 +6,7 @@ import { ModalOk } from '../VPmodalOk/modalOk'
 
 export const ModalWindow = ({ onClose, exercises }) => {
   const [showModalOk, setShowModalOk] = useState(false)
-  console.log(exercises)
+ 
   const dispatch = useDispatch()
 
   const handleSubmit = () => {
