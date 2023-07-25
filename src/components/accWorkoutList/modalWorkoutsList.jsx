@@ -6,13 +6,9 @@ import { Link } from 'react-router-dom'
 import { useGetWorkoutsQuery } from '../../redux/workoutsApi'
 
 export const ModalWorkout = ({ onClose, cardId }) => {
-  console.log(cardId)
-
+ 
   const { data: coursesData, isLoading: isCoursesLoading } = useGetCoursesQuery()
   const { data: workoutsData, isLoading: isWorkoutsLoading } = useGetWorkoutsQuery()
-
-  console.log(coursesData)
-  console.log(workoutsData)
 
   if (isCoursesLoading) {
     return <h1>Идет подгрзука данных</h1>

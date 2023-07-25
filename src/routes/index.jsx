@@ -11,8 +11,7 @@ import { Loginсhange } from '../pages/newlogin'
 import { Pasсhange } from '../pages/newpas'
 
 export const AppRoutes = () => {
-  const token = localStorage.getItem('token')
-  console.log(token)
+  const userId = localStorage.getItem('userId')
   return (
     <Routes>
       <Route path='/' element={<MainPage />} />
@@ -21,7 +20,7 @@ export const AppRoutes = () => {
       <Route path='/login' element={<Login />} />
       <Route path='/registration' element={<Registration />} />
 
-      <Route element={<ProtectedRoute isAllowed={Boolean(token)} />}>
+      <Route element={<ProtectedRoute isAllowed={Boolean(userId)} />}>
         <Route path='/account' element={<Account />} />
         <Route path='/newlogin' element={<Loginсhange />} />
         <Route path='/newpas' element={<Pasсhange />} />

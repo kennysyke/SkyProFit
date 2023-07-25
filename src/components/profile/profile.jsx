@@ -23,7 +23,7 @@ export function Profile() {
     setSelectedCardId(cardId)
     setIsModalOpen(true)
   }
- console.log(selectedCardId)
+ 
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
@@ -43,7 +43,6 @@ if (isLoading) {
       }
     }
   }
- console.log(myCourses)
   return (
     <>
       <Styled.ContainerProfile>
