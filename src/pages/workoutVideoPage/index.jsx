@@ -17,7 +17,7 @@ export const WorkoutVideoPage = () => {
 
   const workouts = Object.values(data)
   const workout = workouts.find((w) => w._id === params.workoutid)
- 
+
   return (
     <Styled.StyledContainer>
       <Header />
@@ -27,8 +27,8 @@ export const WorkoutVideoPage = () => {
       </Styled.VideoTitleBlock>
       <Player source={workout.source} />
       <Styled.ExercisesProgressBox>
-        {workout.exercises ? <Exercises exercises={workout.exercises} />: ''}
-        {workout.exercises ? <ProgressBar exercises={workout.exercises} />: ''}
+        {workout.exercises ? <Exercises exercises={workout.exercises} users={workout.users} />: ''}
+        {workout.exercises ? <ProgressBar exercises={workout.exercises} users={workout.users}  />: ''}
       </Styled.ExercisesProgressBox>
     </Styled.StyledContainer>
   )

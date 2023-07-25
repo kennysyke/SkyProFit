@@ -1,39 +1,35 @@
 import React, { useState } from 'react'
 import * as Styled from './styles'
-import { useDispatch } from 'react-redux'
-import { setInput1, setInput2, setInput3, setInput4, setInput5 } from '../../redux/slices/modal-store'
 import { ModalOk } from '../VPmodalOk/modalOk'
+import { useUpdateUserDataMutation, useGetWorkoutsQuery } from '../../redux/workoutsApi'
 
 export const ModalWindow = ({ onClose, exercises }) => {
+  const userId = localStorage.getItem('userId')
   const [showModalOk, setShowModalOk] = useState(false)
- 
-  const dispatch = useDispatch()
+  const [inputValues, setInputValues] = useState({ [userId]: [] })
+  const [updateUserData, { isLoading: isUpdating }] = useUpdateUserDataMutation()
 
-  const handleSubmit = () => {
-    setShowModalOk(true)
+  const { refetch } = useGetWorkoutsQuery()
+
+  const handleInputChange = (e, inputId) => {
+    const newValues = { ...inputValues }
+    newValues[userId][Number(inputId.replace('input', '')) - 1] = e.target.value
+    setInputValues(newValues)
   }
 
-  const handleInputChange = (e, inputName) => {
-    const inputValue = e.target.value
-
-    switch (inputName) {
-      case 'input1':
-        dispatch(setInput1(Number(inputValue)))
-        break
-      case 'input2':
-        dispatch(setInput2(Number(inputValue)))
-        break
-      case 'input3':
-        dispatch(setInput3(Number(inputValue)))
-        break
-      case 'input4':
-        dispatch(setInput4(Number(inputValue)))
-        break
-      case 'input5':
-        dispatch(setInput5(Number(inputValue)))
-        break
-      default:
-        break
+  const handleSubmit = async () => {
+    if (!isUpdating) {
+      try {
+        let path = window.location.pathname
+        let workoutId = path.split('/')[2]
+        const { data } = await updateUserData({ updatedUsers: inputValues, workoutId })
+        console.log('Updated user data:', data)
+        setShowModalOk(true)
+        console.log(inputValues)
+        refetch()
+      } catch (err) {
+        console.error(err)
+      }
     }
   }
 
