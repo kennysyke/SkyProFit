@@ -92,3 +92,7 @@ export const ModalButton = styled.button`
   line-height: 24px;
   color: #ffffff;
 `
+export const ErrorText = styled.span`
+  border: 1px solid red;
+  color: red;
+`
