@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import * as Styled from './styles'
 import { ModalWindow } from '../VPmodalProgress/modalProgress'
 
-export const Exercises = ({ exercises, isLoading }) => {
+
+export const Exercises = ({ exercises, users }) => {
+
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleOpenModal = () => {
@@ -12,9 +14,7 @@ export const Exercises = ({ exercises, isLoading }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
-  if (isLoading) {
-    return <h1>Идет подгрузка данных</h1>
-   }
+
 
   return (
     <Styled.ExercisesBox>
@@ -25,7 +25,7 @@ export const Exercises = ({ exercises, isLoading }) => {
         ))}
       </Styled.ExercisesList>
       <Styled.BtnEnter onClick={handleOpenModal}>Заполнить свой прогресс</Styled.BtnEnter>
-      {isModalOpen && <ModalWindow onClose={handleCloseModal} exercises={exercises} />}
+      {isModalOpen && <ModalWindow onClose={handleCloseModal} exercises={exercises} users={users} />}
     </Styled.ExercisesBox>
   )
 }

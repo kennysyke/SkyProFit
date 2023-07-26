@@ -7,6 +7,7 @@ import { HeaderUser } from '../headerUser/headerUser'
 import { removeUser } from '../../redux/slices/userSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+
 export function Header() {
 
   const[userId, setUserId] = useState(localStorage.getItem('userId'))

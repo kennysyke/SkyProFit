@@ -1,15 +1,13 @@
 import React from 'react'
 import * as Styled from './styles'
-import { useSelector } from 'react-redux'
 
-export const ProgressBar = ({ exercises }) => {
-  const inputs = useSelector((state) => [
-    { id: 1, value: state.modalWindow.input1 },
-    { id: 2, value: state.modalWindow.input2 },
-    { id: 3, value: state.modalWindow.input3 },
-    { id: 4, value: state.modalWindow.input4 },
-    { id: 5, value: state.modalWindow.input5 },
-  ])
+
+export const ProgressBar = ({ exercises, users }) => {
+  const userId = localStorage.getItem('userId')
+  const userExercises = users ? users[userId] || Array(exercises.length).fill(0) : Array(exercises.length).fill(0)
+
+  console.log(users)
+  console.log(userId)
 
   const numbers = []
 
@@ -28,11 +26,14 @@ export const ProgressBar = ({ exercises }) => {
 
   const extractedText = exercises.map((str) => str.split('(')[0].trim())
 
+  console.log(extractedText)
+
   return (
     <Styled.ProgressBox>
       <Styled.ProgressTitle>Мой прогресс по тренировке 2:</Styled.ProgressTitle>
       <Styled.ProgressBoxRange>
         {extractedText.length > 0 && (
+<<<<<<< HEAD
           <React.Fragment>
             {extractedText.map((ex, index) => (
               <Styled.ProgressItem key={index}>
@@ -46,6 +47,14 @@ export const ProgressBar = ({ exercises }) => {
                   </Styled.PercentageLabel>
                 </Styled.ContainerProgressBar1>
               </Styled.ProgressItem>
+=======
+          <Styled.InputsBox>
+            {userExercises.map((num, index) => (
+              <Styled.ContainerProgressBar1 key={index} progressWidth={calculateProgressBarWidth(num, numbers[index])}>
+                <Styled.ProgressBar1 type='range' min='0' max={numbers[index]} value={num} readOnly />
+                <Styled.PercentageLabel>{Math.round((num / numbers[index]) * 100)}%</Styled.PercentageLabel>
+              </Styled.ContainerProgressBar1>
+>>>>>>> dev-branch
             ))}
           </React.Fragment>
         )}
