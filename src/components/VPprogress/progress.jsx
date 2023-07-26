@@ -5,8 +5,8 @@ export const ProgressBar = ({ exercises, users }) => {
   const userId = localStorage.getItem('userId')
   const userExercises = users ? users[userId] || Array(exercises.length).fill(0) : Array(exercises.length).fill(0)
 
-  console.log(users)
-  console.log(userId)
+  // console.log(users)
+  // console.log(userId)
 
   const numbers = []
 
@@ -25,9 +25,9 @@ export const ProgressBar = ({ exercises, users }) => {
 
   const extractedText = exercises.map((str) => str.split('(')[0].trim())
 
-  console.log(numbers)
-  console.log(extractedText)
-  console.log(userExercises)
+  // console.log(numbers)
+  // console.log(extractedText)
+  // console.log(userExercises)
 
   return (
     <Styled.ProgressBox>
