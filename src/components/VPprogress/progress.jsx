@@ -32,25 +32,22 @@ export const ProgressBar = ({ exercises }) => {
     <Styled.ProgressBox>
       <Styled.ProgressTitle>Мой прогресс по тренировке 2:</Styled.ProgressTitle>
       <Styled.ProgressBoxRange>
-        <Styled.LabelBox>
-          {extractedText.map((ex, index) => (
-            <Styled.LabelProgress key={index}>{ex}</Styled.LabelProgress>
-          ))}
-        </Styled.LabelBox>
         {extractedText.length > 0 && (
-          <Styled.InputsBox>
-            {extractedText.map((_, index) => (
-              <Styled.ContainerProgressBar1
-                key={index}
-                progressWidth={calculateProgressBarWidth(inputs[index].value, numbers[index])}
-              >
-                <Styled.ProgressBar1 type='range' min='0' max={numbers[index]} value={inputs[index].value} readOnly />
-                <Styled.PercentageLabel>
-                  {Math.round((inputs[index].value / numbers[index]) * 100)}%
-                </Styled.PercentageLabel>
-              </Styled.ContainerProgressBar1>
+          <React.Fragment>
+            {extractedText.map((ex, index) => (
+              <Styled.ProgressItem key={index}>
+                <Styled.LabelProgress>{ex}</Styled.LabelProgress>
+                <Styled.ContainerProgressBar1
+                  progressWidth={calculateProgressBarWidth(inputs[index].value, numbers[index])}
+                >
+                  <Styled.ProgressBar1 type='range' min='0' max={numbers[index]} value={inputs[index].value} readOnly />
+                  <Styled.PercentageLabel>
+                    {Math.round((inputs[index].value / numbers[index]) * 100)}%
+                  </Styled.PercentageLabel>
+                </Styled.ContainerProgressBar1>
+              </Styled.ProgressItem>
             ))}
-          </Styled.InputsBox>
+          </React.Fragment>
         )}
       </Styled.ProgressBoxRange>
     </Styled.ProgressBox>

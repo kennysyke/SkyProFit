@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   button,
   ._btn {
     cursor: pointer;
+    border: 0;
   }
   
   
@@ -40,6 +41,6 @@ export const GlobalStyle = createGlobalStyle`
     background: #FFF;
     min-height: 100vh;
     font-family: 'StratosSkyeng', sans-serif;   
-
+    color: #000;
   }
   `

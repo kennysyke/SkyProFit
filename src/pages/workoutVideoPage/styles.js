@@ -27,8 +27,10 @@ export const VideoSubTitle = styled.p`
 
 export const ExercisesProgressBox = styled.div`
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  width: 100%;
-  height: 638px;
-  padding-top: 75px;
+  column-gap: 94px;
+  row-gap: 40px;
+  flex-wrap: wrap;
+  padding: 75px 0;
 `

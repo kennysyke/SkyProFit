@@ -1,7 +1,6 @@
 import React from 'react'
 import * as Styled from './styles'
 import { useGetCoursesQuery } from '../../redux/fitnesApiBase'
-import { Link } from 'react-router-dom'
 
 import { useGetWorkoutsQuery } from '../../redux/workoutsApi'
 
@@ -29,19 +28,19 @@ export const ModalWorkout = ({ onClose, cardId }) => {
   return (
     <Styled.ModalContainer>
       <Styled.ModalContent>
-        <Styled.ModalHeader>
-          Выберите тренировку
-          <Styled.CloseButton onClick={handleClose}>X</Styled.CloseButton>
-        </Styled.ModalHeader>
-        <Styled.WorkoutList>
-          {workouts
-            .sort((a, b) => extractMainName(a.name).localeCompare(extractMainName(b.name)))
-            .map((w) => (
-              <Link to={`/account/${w._id}`} key={w._id}>
-                <Styled.WorkoutItem>{w.name}</Styled.WorkoutItem>
-              </Link>
-            ))}
-        </Styled.WorkoutList>
+        <Styled.CloseButton onClick={handleClose}>х</Styled.CloseButton>
+        <Styled.ModalHeader>Выберите тренировку</Styled.ModalHeader>
+        <Styled.Scroll>
+          <Styled.WorkoutList>
+            {workouts
+              .sort((a, b) => extractMainName(a.name).localeCompare(extractMainName(b.name)))
+              .map((w) => (
+                <Styled.WorkoutItem to={`/account/${w._id}`} key={w._id}>
+                  {w.name}
+                </Styled.WorkoutItem>
+              ))}
+          </Styled.WorkoutList>
+        </Styled.Scroll>
       </Styled.ModalContent>
     </Styled.ModalContainer>
   )
