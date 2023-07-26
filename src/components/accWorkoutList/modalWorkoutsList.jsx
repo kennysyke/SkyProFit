@@ -1,10 +1,9 @@
 import React from 'react'
 import * as Styled from './styles'
 import { useGetCoursesQuery } from '../../redux/fitnesApiBase'
-
 import { useGetWorkoutsQuery } from '../../redux/workoutsApi'
 
-export const ModalWorkout = ({ onClose, cardId }) => {
+export const ModalWorkout = ({ onClose, cardId}) => {
   const { data: coursesData, isLoading: isCoursesLoading } = useGetCoursesQuery()
   const { data: workoutsData, isLoading: isWorkoutsLoading } = useGetWorkoutsQuery()
 
@@ -25,6 +24,9 @@ export const ModalWorkout = ({ onClose, cardId }) => {
     onClose()
   }
 
+  // const isEqualEx = sumUserExercises === maxSum;
+  // console.log('тренировка выполнена?',isEqualEx)
+
   return (
     <Styled.ModalContainer>
       <Styled.ModalContent>
@@ -39,11 +41,10 @@ export const ModalWorkout = ({ onClose, cardId }) => {
                   <Styled.WorkoutName>
                     {w.name}
                     <svg width='28' height='26' viewBox='0 0 28 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                    <circle cx='12' cy='13.5' r='11.5' stroke='#06B16E' />
-                    <path d='M6 9.81034L11.775 15.5L27 0.5' stroke='#06B16E' />
-                  </svg>
-                    </Styled.WorkoutName>
-                  
+                      <circle cx='12' cy='13.5' r='11.5' stroke='#06B16E' />
+                      <path d='M6 9.81034L11.775 15.5L27 0.5' stroke='#06B16E' />
+                    </svg>                    
+                  </Styled.WorkoutName>
                 </Styled.WorkoutItem>
               ))}
           </Styled.WorkoutList>

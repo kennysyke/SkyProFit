@@ -24,15 +24,14 @@ export const ProgressBar = ({ exercises, users }) => {
   const calculateProgressBarWidth = (value, max) => {
     maxSum += max
     console.log('Сумма значений max:', maxSum)
-
     return `${(value / max) * 100}%`
   }
-
+  
   //Сумма упражнений, выполненных пользователем
   const sumUserExercises = userExercises
     .map(Number)
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-  console.log(sumUserExercises)
+  console.log('Сумма упражнений, выполненных пользователем',sumUserExercises)
 
   const extractedText = exercises.map((str) => str.split('(')[0].trim())
 
