@@ -31,7 +31,7 @@ export const ProgressBar = ({ exercises, users }) => {
 
   return (
     <Styled.ProgressBox>
-      <Styled.ProgressTitle>Мой прогресс по тренировке 2:</Styled.ProgressTitle>
+      <Styled.ProgressTitle>Мой прогресс по тренировке:</Styled.ProgressTitle>
       <Styled.ProgressBoxRange>
         {extractedText.map((ex, index) => {
           const num = userExercises[index] || 0

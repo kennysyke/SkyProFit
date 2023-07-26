@@ -4,31 +4,39 @@ import { ProgressBar } from '../../components/VPprogress/progress'
 import * as Styled from './styles'
 
 import { useGetWorkoutsQuery } from '../../redux/workoutsApi'
+import { useGetCoursesQuery } from '../../redux/fitnesApiBase'
 import { useParams } from 'react-router-dom'
 import { Header } from '../../components/header/header'
 
 export const WorkoutVideoPage = () => {
   const { data, isLoading } = useGetWorkoutsQuery()
+  const { data: dataCourses, isLoading: isLoadingCourses } = useGetCoursesQuery()
   const params = useParams()
 
-  if (isLoading) {
-   return <h1>Идет подгрузка данных</h1>
+  if (isLoading || isLoadingCourses) {
+    return <h1>Идет подгрузка данных</h1>
   }
 
+  const courses = Object.values(dataCourses)
   const workouts = Object.values(data)
-  const workout = workouts.find((w) => w._id === params.workoutid)
+
+  const activeWorkout = workouts.find((w) => w._id === params.workoutid)
+  const activeCourse = courses.find((el) => el.workout.includes(activeWorkout._id))
+
+  console.log(activeWorkout)
+  console.log(activeCourse)
 
   return (
     <Styled.StyledContainer>
       <Header />
       <Styled.VideoTitleBlock>
-        <Styled.VideoTitle>Йога</Styled.VideoTitle>
-        <Styled.VideoSubTitle>{workout.name}</Styled.VideoSubTitle>
+        <Styled.VideoTitle>{activeCourse.name}</Styled.VideoTitle>
+        <Styled.VideoSubTitle>{activeWorkout.name}</Styled.VideoSubTitle>
       </Styled.VideoTitleBlock>
-      <Player source={workout.source} />
+      <Player source={activeWorkout.source} />
       <Styled.ExercisesProgressBox>
-        {workout.exercises ? <Exercises exercises={workout.exercises} users={workout.users} />: ''}
-        {workout.exercises ? <ProgressBar exercises={workout.exercises} users={workout.users}  />: ''}
+        {activeWorkout.exercises ? <Exercises exercises={activeWorkout.exercises} users={activeWorkout.users} /> : ''}
+        {activeWorkout.exercises ? <ProgressBar exercises={activeWorkout.exercises} users={activeWorkout.users} /> : ''}
       </Styled.ExercisesProgressBox>
     </Styled.StyledContainer>
   )
