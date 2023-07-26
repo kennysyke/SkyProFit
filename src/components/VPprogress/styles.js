@@ -39,11 +39,13 @@ export const ProgressItem = styled.div`
   gap: 27px;
 `
 
-export const ContainerProgressBar1 = styled.div`
+export const ProgressWidth = styled.div`
   flex: 1;
   min-width: 120px;
+`
+
+export const ContainerProgressBar1 = styled.div`
   position: relative;
-  display: inline-block;
   border-radius: 22px;
   border: 2px solid #565eef;
   background: #edecff;

@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import * as Styled from './styles'
 import { ModalWindow } from '../VPmodalProgress/modalProgress'
 
-
 export const Exercises = ({ exercises, users }) => {
-
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const handleOpenModal = () => {
@@ -14,7 +12,6 @@ export const Exercises = ({ exercises, users }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false)
   }
-
 
   return (
     <Styled.ExercisesBox>
