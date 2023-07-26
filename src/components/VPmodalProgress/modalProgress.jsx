@@ -45,24 +45,26 @@ export const ModalWindow = ({ onClose, exercises }) => {
     <Styled.ModalContainer>
       <Styled.ModalContent>
         <Styled.ModalHeader>Мой прогресс</Styled.ModalHeader>
-        {smallLetter.map((exercise, index) => (
-          <React.Fragment key={index}>
-            <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
-              Cколько раз вы сделали {exercise}?
-            </Styled.ModalQuestion>
-            <Styled.ModalInput
-              type='text'
-              id={`input${index + 1}`}
-              placeholder='Введите значение'
-              onChange={(e) => handleInputChange(e, `input${index + 1}`)}
-            />
-          </React.Fragment>
-        ))}
+        <Styled.Scroll>
+          {smallLetter.map((exercise, index) => (
+            <React.Fragment key={index}>
+              <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
+                Cколько раз вы сделали {exercise}?
+              </Styled.ModalQuestion>
+              <Styled.ModalInput
+                type='text'
+                id={`input${index + 1}`}
+                placeholder='Введите значение'
+                onChange={(e) => handleInputChange(e, `input${index + 1}`)}
+              />
+            </React.Fragment>
+          ))}
+        </Styled.Scroll>
         <Styled.ModalButton onClick={handleSubmit} id='submitBtn'>
           Отправить
         </Styled.ModalButton>
+        {showModalOk && <ModalOk showModalOk={showModalOk} setShowModalOk={setShowModalOk} onClose={onClose} />}
       </Styled.ModalContent>
-      {showModalOk && <ModalOk showModalOk={showModalOk} setShowModalOk={setShowModalOk} onClose={onClose} />}
     </Styled.ModalContainer>
   )
 }
