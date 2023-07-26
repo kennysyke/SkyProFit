@@ -60,23 +60,18 @@ export const ModalQuestion = styled.label`
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.05px;
-  padding-bottom: 20px;
+  padding-bottom: 12px;
 `
 
 export const ModalInput = styled.input`
-  display: block;
   width: 100%;
   height: 35px;
+  font-size: 18px;
   border: none;
   border-bottom: 1px solid rgb(208, 206, 206);
   margin-bottom: 38px;
-  padding-bottom: 8px;
   ::placeholder {
     color: #e1e1e1;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
   }
 `
 

@@ -55,12 +55,48 @@ export const ContainerProgressBar1 = styled.div`
   &::before {
     content: '';
     position: absolute;
+    background: #565eef;
     top: 0;
     left: 0;
     height: 100%;
     width: ${(props) => props.progressWidth};
-    background: #565eef;
   }
+  ${(props) =>
+    props.progressItem1 &&
+    `
+    border-color: #ff6d00;
+      background: #FFF2E0;
+      ::before {
+        background: #ff6d00;
+      }
+  `}
+  ${(props) =>
+    props.progressItem2 &&
+    `
+    border-color: #9a48f1;
+    background: #f9ebff;
+    &::before {
+      background: #9a48f1;
+    }
+  `}
+  ${(props) =>
+    props.progressItem3 &&
+    `
+    border-color: #bcec30;
+    background: #ebffab;
+    ::before {
+      background: #bcec30;
+    }
+  `}
+  ${(props) =>
+    props.progressItem4 &&
+    `
+    border-color: #38BCED;
+    background: #6FE4FF;
+    ::before {
+      background: #38BCED;
+    }
+  `}
 `
 
 export const ProgressBar1 = styled.input`
@@ -72,6 +108,7 @@ export const PercentageLabel = styled.span`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 14px;
-  color: white;
+  font-size: 24px;
+  color: black;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 `
