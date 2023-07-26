@@ -40,8 +40,12 @@ export const ProgressBar = ({ exercises, users }) => {
               <Styled.LabelProgress>{ex}</Styled.LabelProgress>
               <Styled.ProgressWidth>
                 <Styled.ContainerProgressBar1
-                  key={index}
                   progressWidth={calculateProgressBarWidth(num, numbers[index])}
+                  progressItem1={index === 1}
+                  progressItem2={index === 2}
+                  progressItem3={index === 3}
+                  progressItem4={index === 4}
+                  progressItem5={index === 5}
                 >
                   <Styled.ProgressBar1 type='range' min='0' max={numbers[index]} value={num} readOnly />
                   <Styled.PercentageLabel>{Math.round((num / numbers[index]) * 100)}%</Styled.PercentageLabel>
