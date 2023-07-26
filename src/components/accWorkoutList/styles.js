@@ -91,3 +91,23 @@ export const WorkoutItem = styled(Link)`
   align-items: center;
   text-align: center;
 `
+
+export const WorkoutItemDone = styled(Link)`
+  flex-basis: 76px;
+  border-radius: 26px;
+  border: 1px solid #06B16E;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  letter-spacing: -0.05px;
+  color: inherit;
+  padding: 11px 28px 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`
+export const WorkoutName = styled.a`
+  color:#06B16E;
+`

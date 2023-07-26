@@ -36,7 +36,14 @@ export const ModalWorkout = ({ onClose, cardId }) => {
               .sort((a, b) => extractMainName(a.name).localeCompare(extractMainName(b.name)))
               .map((w) => (
                 <Styled.WorkoutItem to={`/account/${w._id}`} key={w._id}>
-                  {w.name}
+                  <Styled.WorkoutName>
+                    {w.name}
+                    <svg width='28' height='26' viewBox='0 0 28 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <circle cx='12' cy='13.5' r='11.5' stroke='#06B16E' />
+                    <path d='M6 9.81034L11.775 15.5L27 0.5' stroke='#06B16E' />
+                  </svg>
+                    </Styled.WorkoutName>
+                  
                 </Styled.WorkoutItem>
               ))}
           </Styled.WorkoutList>

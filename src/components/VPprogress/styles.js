@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
 export const ProgressBox = styled.div`
-  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  width: 638px;
+  height: 336px;
   border-radius: 30px;
   background: #f2f2f2;
-  padding: 36px 55px 32px 44px;
+  align-items: center;
+  justify-content: center;
 `
 
 export const ProgressTitle = styled.h2`
@@ -14,41 +18,44 @@ export const ProgressTitle = styled.h2`
   font-weight: 400;
   line-height: 40px;
   padding-bottom: 40px;
-  text-align: center;
 `
 
 export const ProgressBoxRange = styled.div`
   display: flex;
+  flex-direction: row;
+  gap: 30px;
+`
+
+export const LabelBox = styled.div`
+  display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 20px;
 `
 
 export const LabelProgress = styled.label`
+  color: #000;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
-  flex: 1;
 `
 
-export const ProgressItem = styled.div`
+export const InputsBox = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 27px;
+  flex-direction: column;
+  gap: 20px;
 `
 
 export const ContainerProgressBar1 = styled.div`
-  flex: 1;
-  min-width: 120px;
   position: relative;
   display: inline-block;
   border-radius: 22px;
   border: 2px solid #565eef;
   background: #edecff;
   height: 36px;
+  width: 278px;
   overflow: hidden;
+  background: rgba(86, 94, 239, 0.25);
 
   &::before {
     content: '';
@@ -71,5 +78,5 @@ export const PercentageLabel = styled.span`
   top: 50%;
   transform: translate(-50%, -50%);
   font-size: 14px;
-  color: white;
+  color: white; 
 `

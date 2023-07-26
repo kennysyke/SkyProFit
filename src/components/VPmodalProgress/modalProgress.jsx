@@ -12,6 +12,7 @@ export const ModalWindow = ({ onClose, exercises }) => {
   const { refetch } = useGetWorkoutsQuery()
 
   const [inputErrors, setInputErrors] = useState({})
+  // const [totalSum, setTotalSum] = useState(0);
 
   const handleInputChange = (e, inputId) => {
     const newValues = { ...inputValues }
@@ -24,11 +25,15 @@ export const ModalWindow = ({ onClose, exercises }) => {
         [inputId]: true,
       }))
     } else {
-      newValues[userId][Number(inputId.replace('input', '')) - 1] = value
-      setInputErrors((prevErrors) => ({
+      newValues[userId][Number(inputId.replace('input', '')) - 1] = value;
+      setInputErrors(prevErrors => ({
         ...prevErrors,
-        [inputId]: false,
-      }))
+        [inputId]: false
+      }));
+      
+      // Вычисление суммы введенных значений
+    //   const sum = Object.values(newValues[userId]).reduce((accumulator, currentValue) => accumulator + Number(currentValue), 0);
+    //   setTotalSum(sum);
     }
 
     setInputValues(newValues)
@@ -43,6 +48,7 @@ export const ModalWindow = ({ onClose, exercises }) => {
         console.log('Updated user data:', data)
         setShowModalOk(true)
         console.log(inputValues)
+        // console.log('Сумма введенных значений:', totalSum);
         refetch()
       } catch (err) {
         console.error(err)
