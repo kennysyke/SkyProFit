@@ -11,9 +11,26 @@ export const ModalWindow = ({ onClose, exercises }) => {
 
   const { refetch } = useGetWorkoutsQuery()
 
+  const [inputErrors, setInputErrors] = useState({})
+
   const handleInputChange = (e, inputId) => {
     const newValues = { ...inputValues }
-    newValues[userId][Number(inputId.replace('input', ''))] = e.target.value
+    const value = e.target.value
+
+    // Проверка на ввод только цифр
+    if (!Number.isInteger(Number(value)) || Number(value) <= 0) {
+      setInputErrors((prevErrors) => ({
+        ...prevErrors,
+        [inputId]: true,
+      }))
+    } else {
+      newValues[userId][Number(inputId.replace('input', '')) - 1] = value
+      setInputErrors((prevErrors) => ({
+        ...prevErrors,
+        [inputId]: false,
+      }))
+    }
+
     setInputValues(newValues)
   }
 
@@ -48,13 +65,17 @@ export const ModalWindow = ({ onClose, exercises }) => {
         <Styled.Scroll>
           {smallLetter.map((exercise, index) => (
             <React.Fragment key={index}>
-              <Styled.ModalQuestion htmlFor={`input${index}`}>Cколько раз вы сделали {exercise}?</Styled.ModalQuestion>
+              <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
+                Cколько раз вы сделали {exercise}?
+              </Styled.ModalQuestion>
               <Styled.ModalInput
                 type='text'
-                id={`input${index}`}
+                id={`input${index + 1}`}
                 placeholder='Введите значение'
-                onChange={(e) => handleInputChange(e, `input${index}`)}
+                onChange={(e) => handleInputChange(e, `input${index + 1}`)}
+                className={inputErrors[`input${index + 1}`] ? 'error' : ''}
               />
+              {inputErrors[`input${index + 1}`] && <Styled.ErrorText>Введите корректное значение</Styled.ErrorText>}
             </React.Fragment>
           ))}
         </Styled.Scroll>
