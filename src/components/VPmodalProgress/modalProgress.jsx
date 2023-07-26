@@ -13,7 +13,7 @@ export const ModalWindow = ({ onClose, exercises }) => {
 
   const handleInputChange = (e, inputId) => {
     const newValues = { ...inputValues }
-    newValues[userId][Number(inputId.replace('input', '')) - 1] = e.target.value
+    newValues[userId][Number(inputId.replace('input', ''))] = e.target.value
     setInputValues(newValues)
   }
 
@@ -48,14 +48,12 @@ export const ModalWindow = ({ onClose, exercises }) => {
         <Styled.Scroll>
           {smallLetter.map((exercise, index) => (
             <React.Fragment key={index}>
-              <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
-                Cколько раз вы сделали {exercise}?
-              </Styled.ModalQuestion>
+              <Styled.ModalQuestion htmlFor={`input${index}`}>Cколько раз вы сделали {exercise}?</Styled.ModalQuestion>
               <Styled.ModalInput
                 type='text'
-                id={`input${index + 1}`}
+                id={`input${index}`}
                 placeholder='Введите значение'
-                onChange={(e) => handleInputChange(e, `input${index + 1}`)}
+                onChange={(e) => handleInputChange(e, `input${index}`)}
               />
             </React.Fragment>
           ))}
