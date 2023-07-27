@@ -1,10 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ExercisesBox = styled.div`
-  width: 428px;
-  height: 500px;
+  flex: 0.8 0.8 0;
   display: flex;
-  gap: 15px;
+  gap: 30px;
   flex-direction: column;
 `
 export const ExercisesTitle = styled.h2`
@@ -17,10 +16,8 @@ export const ExercisesTitle = styled.h2`
 export const ExercisesList = styled.ol`
   list-style-type: disc;
   color: black;
-  padding-bottom: 40px;
   margin-left: 10px;
   padding-left: 20px;
-  padding-right: 20px;
 `
 export const ExercisesListItems = styled.li`
   color: #000;
@@ -35,7 +32,6 @@ export const BtnEnter = styled.button`
   height: 52px;
   background: #580ea2;
   border-radius: 46px;
-  margin-bottom: 20px;
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;

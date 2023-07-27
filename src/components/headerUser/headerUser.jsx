@@ -1,9 +1,7 @@
-
 import * as Styled from './styles'
 
-export function HeaderUser({onLogout, togglePopup,  isOpen}) {
+export function HeaderUser({ onLogout, togglePopup, isOpen }) {
   const email = localStorage.getItem('userEmail')
- 
 
   return (
     <Styled.User>

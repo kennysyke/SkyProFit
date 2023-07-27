@@ -25,14 +25,16 @@ export const GlobalStyle = createGlobalStyle`
   button,
   ._btn {
     cursor: pointer;
+    border: 0;
   }
   
   
   @font-face {
-    font-family: 'StratosSkyeng';
-    src: local("StratosSkyeng"), local("StratosSkyeng"), url("../fonts/Stratos-Regular.woff2") format("woff2"), url("../fonts/Stratos-Regular.woff") format("woff");
-    font-weight: 400;
+    font-family: StratosSkyeng;
+    font-weight: normal;
     font-style: normal;
+    font-display: swap;
+    src: url('/fonts/Stratos-Regular.woff2') format('woff2'), url('/fonts/Stratos-Regular.woff') format('woff');
   }
   
   html,
@@ -40,6 +42,6 @@ export const GlobalStyle = createGlobalStyle`
     background: #FFF;
     min-height: 100vh;
     font-family: 'StratosSkyeng', sans-serif;   
-
+    color: #000;
   }
   `

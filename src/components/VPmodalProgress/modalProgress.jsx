@@ -1,39 +1,56 @@
 import React, { useState } from 'react'
 import * as Styled from './styles'
-import { useDispatch } from 'react-redux'
-import { setInput1, setInput2, setInput3, setInput4, setInput5 } from '../../redux/slices/modal-store'
 import { ModalOk } from '../VPmodalOk/modalOk'
+import { useUpdateUserDataMutation, useGetWorkoutsQuery } from '../../redux/workoutsApi'
 
 export const ModalWindow = ({ onClose, exercises }) => {
+  const userId = localStorage.getItem('userId')
   const [showModalOk, setShowModalOk] = useState(false)
-  console.log(exercises)
-  const dispatch = useDispatch()
+  const [inputValues, setInputValues] = useState({ [userId]: [] })
+  const [updateUserData, { isLoading: isUpdating }] = useUpdateUserDataMutation()
 
-  const handleSubmit = () => {
-    setShowModalOk(true)
+  const { refetch } = useGetWorkoutsQuery()
+  const [inputErrors, setInputErrors] = useState({})
+
+  const handleInputChange = (e, inputId) => {
+    const newValues = { ...inputValues }
+    const inputValue = e.target.value.trim()
+
+    // Проверка на ввод цифр больше 0
+    if (!/^\d+$/.test(inputValue) || Number(inputValue) <= 0) {
+      setInputErrors((prevErrors) => {
+        return { ...prevErrors, [inputId]: 'Пожалуйста, введите цифры больше 0' }
+      })
+    } else {
+      setInputErrors((prevErrors) => {
+        const errorsCopy = { ...prevErrors }
+        delete errorsCopy[inputId]
+        return errorsCopy
+      })
+    }
+
+    newValues[userId][Number(inputId.replace('input', '')) - 1] = inputValue
+    setInputValues(newValues)
   }
 
-  const handleInputChange = (e, inputName) => {
-    const inputValue = e.target.value
-
-    switch (inputName) {
-      case 'input1':
-        dispatch(setInput1(Number(inputValue)))
-        break
-      case 'input2':
-        dispatch(setInput2(Number(inputValue)))
-        break
-      case 'input3':
-        dispatch(setInput3(Number(inputValue)))
-        break
-      case 'input4':
-        dispatch(setInput4(Number(inputValue)))
-        break
-      case 'input5':
-        dispatch(setInput5(Number(inputValue)))
-        break
-      default:
-        break
+  const handleSubmit = async () => {
+    if (!isUpdating) {
+      // Проверка наличия ошибок ввода
+      if (Object.keys(inputErrors).length === 0) {
+        try {
+          let path = window.location.pathname
+          let workoutId = path.split('/')[2]
+          const { data } = await updateUserData({ updatedUsers: inputValues, workoutId })
+          console.log(data)
+          setShowModalOk(true)
+          // console.log(inputValues)
+          refetch()
+        } catch (err) {
+          console.error(err)
+        }
+      } else {
+        console.log('Пожалуйста, исправьте ошибки ввода:', inputErrors)
+      }
     }
   }
 
@@ -49,24 +66,30 @@ export const ModalWindow = ({ onClose, exercises }) => {
     <Styled.ModalContainer>
       <Styled.ModalContent>
         <Styled.ModalHeader>Мой прогресс</Styled.ModalHeader>
-        {smallLetter.map((exercise, index) => (
-          <React.Fragment key={index}>
-            <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
-              Cколько раз вы сделали {exercise}?
-            </Styled.ModalQuestion>
-            <Styled.ModalInput
-              type='text'
-              id={`input${index + 1}`}
-              placeholder='Введите значение'
-              onChange={(e) => handleInputChange(e, `input${index + 1}`)}
-            />
-          </React.Fragment>
-        ))}
+        <Styled.Scroll>
+          {smallLetter.map((exercise, index) => (
+            <React.Fragment key={index}>
+              <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
+                Cколько раз вы сделали {exercise}?
+              </Styled.ModalQuestion>
+              <Styled.ModalInput
+                type='text'
+                id={`input${index + 1}`}
+                placeholder='Введите значение'
+                onChange={(e) => handleInputChange(e, `input${index + 1}`)}
+                isInvalid={inputErrors[`input${index + 1}`]}
+              />
+              {inputErrors[`input${index + 1}`] && (
+                <span style={{ color: 'red' }}>{inputErrors[`input${index + 1}`]}</span>
+              )}
+            </React.Fragment>
+          ))}
+        </Styled.Scroll>
         <Styled.ModalButton onClick={handleSubmit} id='submitBtn'>
           Отправить
         </Styled.ModalButton>
+        {showModalOk && <ModalOk showModalOk={showModalOk} setShowModalOk={setShowModalOk} onClose={onClose} />}
       </Styled.ModalContent>
-      {showModalOk && <ModalOk showModalOk={showModalOk} setShowModalOk={setShowModalOk} onClose={onClose} />}
     </Styled.ModalContainer>
   )
 }

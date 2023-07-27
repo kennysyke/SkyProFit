@@ -17,9 +17,25 @@ export const BtnUp = styled.button`
   padding: 7px 24px 9px 24px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  border-radius: 46px;
-  background: #c7e957;
-  width: 100px;
-  height: 32px;
+  width: 140px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  background-color: #c7e957;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translate(20%, -170%);
+  transition: opacity 0.35s ease;
+  margin-top: 40px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #daf289;
+  }
+
+  &:active {
+    background-color: #ebffab;
+  }
 `

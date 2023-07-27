@@ -17,6 +17,7 @@ export function Newlogin() {
     updateEmail(auth.currentUser, login)
       .then(() => {
         onAuthStateChanged(auth, (user) => {
+          localStorage.setItem('userEmail', login)
           dispatch(
             setUser({
               email: user.email,

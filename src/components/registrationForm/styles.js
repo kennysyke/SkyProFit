@@ -16,7 +16,9 @@ export const LoginInput = Styled.input`
   border: none;
   border-bottom: 1px solid rgb(208, 206, 206);
   margin-bottom: 38px;
-  padding-bottom: 8px;
+  font-size: 18px;
+  padding-left: 5px;
+  padding-right: 5px;
   ::placeholder {       
       color: #E1E1E1;
       font-style: normal;
@@ -31,8 +33,9 @@ export const PasswordInput = Styled.input`
   border: none;
   border-bottom: 1px solid #D0CECE;;
   margin-bottom: 60px;
-  padding-bottom: 8px;
-
+  font-size: 18px;
+  padding-left: 5px;
+  padding-right: 5px;
   &::placeholder {       
     color: #E1E1E1;
     font-style: normal;

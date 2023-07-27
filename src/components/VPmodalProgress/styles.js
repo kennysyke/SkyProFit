@@ -1,71 +1,90 @@
 import styled from 'styled-components'
 
 export const ModalContainer = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.4);
 `
 
 export const ModalContent = styled.div`
-  margin: 15% auto;
-  padding: 20px;
+  position: relative;
+  width: 100%;
+  padding: 36px 42px 44px;
   border-radius: 12px;
   background: #fff;
-  width: 444px;
-  height: 554px;
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+  max-width: 444px;
+  min-height: 626px;
 `
 
 export const ModalHeader = styled.h3`
-  color: #000;
+  text-align: center;
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: 40px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+`
+
+export const Scroll = styled.div`
+  padding-right: 24px;
+  height: 365px;
+  overflow: auto;
+
+  scrollbar-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.05);
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.15);
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.05);
+  }
 `
 
 export const ModalQuestion = styled.label`
   color: #000;
+  display: block;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.05px;
-  width: 361px;
-  padding-bottom: 20px;
+  padding-bottom: 12px;
 `
 
 export const ModalInput = styled.input`
-  width: 361px;
+  width: 100%;
   height: 35px;
+  font-size: 18px;
   border: none;
-  border-bottom: 1px solid rgb(208, 206, 206);
-  margin-bottom: 38px;
-  padding-bottom: 8px;
+  border-bottom: 3px solid ${props => props.isInvalid ? 'red' : 'rgb(208, 206, 206)'};
+  margin-bottom: 10px;
+
   ::placeholder {
     color: #e1e1e1;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 24px;
   }
-`
+`;
 
 export const ModalButton = styled.button`
   width: 278px;
+  display: block;
+  margin: 40px auto 0 auto;
   height: 52px;
-  border-radius: 46px;
-  color: white;
   background: #580ea2;
+  border-radius: 46px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
 `

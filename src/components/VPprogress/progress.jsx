@@ -1,15 +1,12 @@
 import React from 'react'
 import * as Styled from './styles'
-import { useSelector } from 'react-redux'
 
-export const ProgressBar = ({ exercises }) => {
-  const inputs = useSelector((state) => [
-    { id: 1, value: state.modalWindow.input1 },
-    { id: 2, value: state.modalWindow.input2 },
-    { id: 3, value: state.modalWindow.input3 },
-    { id: 4, value: state.modalWindow.input4 },
-    { id: 5, value: state.modalWindow.input5 },
-  ])
+export const ProgressBar = ({ exercises, users }) => {
+  const userId = localStorage.getItem('userId')
+  const userExercises = users ? users[userId] || Array(exercises.length).fill(0) : Array(exercises.length).fill(0)
+
+  // console.log(users)
+  // console.log(userId)
 
   const numbers = []
 
@@ -28,30 +25,35 @@ export const ProgressBar = ({ exercises }) => {
 
   const extractedText = exercises.map((str) => str.split('(')[0].trim())
 
+  // console.log(numbers)
+  // console.log(extractedText)
+  // console.log(userExercises)
+
   return (
     <Styled.ProgressBox>
-      <Styled.ProgressTitle>Мой прогресс по тренировке 2:</Styled.ProgressTitle>
+      <Styled.ProgressTitle>Мой прогресс по тренировке:</Styled.ProgressTitle>
       <Styled.ProgressBoxRange>
-        <Styled.LabelBox>
-          {extractedText.map((ex, index) => (
-            <Styled.LabelProgress key={index}>{ex}</Styled.LabelProgress>
-          ))}
-        </Styled.LabelBox>
-        {extractedText.length > 0 && (
-          <Styled.InputsBox>
-            {extractedText.map((_, index) => (
-              <Styled.ContainerProgressBar1
-                key={index}
-                progressWidth={calculateProgressBarWidth(inputs[index].value, numbers[index])}
-              >
-                <Styled.ProgressBar1 type='range' min='0' max={numbers[index]} value={inputs[index].value} readOnly />
-                <Styled.PercentageLabel>
-                  {Math.round((inputs[index].value / numbers[index]) * 100)}%
-                </Styled.PercentageLabel>
-              </Styled.ContainerProgressBar1>
-            ))}
-          </Styled.InputsBox>
-        )}
+        {extractedText.map((ex, index) => {
+          const num = userExercises[index] || 0
+          return (
+            <Styled.ProgressItem key={index}>
+              <Styled.LabelProgress>{ex}</Styled.LabelProgress>
+              <Styled.ProgressWidth>
+                <Styled.ContainerProgressBar1
+                  progressWidth={calculateProgressBarWidth(num, numbers[index])}
+                  progressItem1={index === 1}
+                  progressItem2={index === 2}
+                  progressItem3={index === 3}
+                  progressItem4={index === 4}
+                  progressItem5={index === 5}
+                >
+                  <Styled.ProgressBar1 type='range' min='0' max={numbers[index]} value={num} readOnly />
+                  <Styled.PercentageLabel>{Math.round((num / numbers[index]) * 100)}%</Styled.PercentageLabel>
+                </Styled.ContainerProgressBar1>
+              </Styled.ProgressWidth>
+            </Styled.ProgressItem>
+          )
+        })}
       </Styled.ProgressBoxRange>
     </Styled.ProgressBox>
   )
