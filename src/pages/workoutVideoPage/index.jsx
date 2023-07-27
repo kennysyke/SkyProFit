@@ -23,8 +23,8 @@ export const WorkoutVideoPage = () => {
   const activeWorkout = workouts.find((w) => w._id === params.workoutid)
   const activeCourse = courses.find((el) => el.workout.includes(activeWorkout._id))
 
-  console.log(activeWorkout)
-  console.log(activeCourse)
+  // console.log(activeWorkout)
+  // console.log(activeCourse)
 
   return (
     <Styled.StyledContainer>

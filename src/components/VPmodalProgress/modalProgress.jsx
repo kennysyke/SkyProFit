@@ -10,25 +10,46 @@ export const ModalWindow = ({ onClose, exercises }) => {
   const [updateUserData, { isLoading: isUpdating }] = useUpdateUserDataMutation()
 
   const { refetch } = useGetWorkoutsQuery()
+  const [inputErrors, setInputErrors] = useState({})
 
   const handleInputChange = (e, inputId) => {
     const newValues = { ...inputValues }
-    newValues[userId][Number(inputId.replace('input', ''))] = e.target.value
+    const inputValue = e.target.value.trim()
+
+    // Проверка на ввод цифр больше 0
+    if (!/^\d+$/.test(inputValue) || Number(inputValue) <= 0) {
+      setInputErrors((prevErrors) => {
+        return { ...prevErrors, [inputId]: 'Пожалуйста, введите цифры больше 0' }
+      })
+    } else {
+      setInputErrors((prevErrors) => {
+        const errorsCopy = { ...prevErrors }
+        delete errorsCopy[inputId]
+        return errorsCopy
+      })
+    }
+
+    newValues[userId][Number(inputId.replace('input', '')) - 1] = inputValue
     setInputValues(newValues)
   }
 
   const handleSubmit = async () => {
     if (!isUpdating) {
-      try {
-        let path = window.location.pathname
-        let workoutId = path.split('/')[2]
-        const { data } = await updateUserData({ updatedUsers: inputValues, workoutId })
-        console.log('Updated user data:', data)
-        setShowModalOk(true)
-        console.log(inputValues)
-        refetch()
-      } catch (err) {
-        console.error(err)
+      // Проверка наличия ошибок ввода
+      if (Object.keys(inputErrors).length === 0) {
+        try {
+          let path = window.location.pathname
+          let workoutId = path.split('/')[2]
+          const { data } = await updateUserData({ updatedUsers: inputValues, workoutId })
+          console.log(data)
+          setShowModalOk(true)
+          // console.log(inputValues)
+          refetch()
+        } catch (err) {
+          console.error(err)
+        }
+      } else {
+        console.log('Пожалуйста, исправьте ошибки ввода:', inputErrors)
       }
     }
   }
@@ -48,13 +69,19 @@ export const ModalWindow = ({ onClose, exercises }) => {
         <Styled.Scroll>
           {smallLetter.map((exercise, index) => (
             <React.Fragment key={index}>
-              <Styled.ModalQuestion htmlFor={`input${index}`}>Cколько раз вы сделали {exercise}?</Styled.ModalQuestion>
+              <Styled.ModalQuestion htmlFor={`input${index + 1}`}>
+                Cколько раз вы сделали {exercise}?
+              </Styled.ModalQuestion>
               <Styled.ModalInput
                 type='text'
-                id={`input${index}`}
+                id={`input${index + 1}`}
                 placeholder='Введите значение'
-                onChange={(e) => handleInputChange(e, `input${index}`)}
+                onChange={(e) => handleInputChange(e, `input${index + 1}`)}
+                isInvalid={inputErrors[`input${index + 1}`]}
               />
+              {inputErrors[`input${index + 1}`] && (
+                <span style={{ color: 'red' }}>{inputErrors[`input${index + 1}`]}</span>
+              )}
             </React.Fragment>
           ))}
         </Styled.Scroll>

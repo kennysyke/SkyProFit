@@ -68,12 +68,13 @@ export const ModalInput = styled.input`
   height: 35px;
   font-size: 18px;
   border: none;
-  border-bottom: 1px solid rgb(208, 206, 206);
-  margin-bottom: 38px;
+  border-bottom: 3px solid ${props => props.isInvalid ? 'red' : 'rgb(208, 206, 206)'};
+  margin-bottom: 10px;
+
   ::placeholder {
     color: #e1e1e1;
   }
-`
+`;
 
 export const ModalButton = styled.button`
   width: 278px;
