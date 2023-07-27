@@ -75,19 +75,40 @@ export const WorkoutList = styled.div`
   gap: 12px;
 `
 
-export const WorkoutItem = styled(Link)`
+const WorkoutItemBase = styled(Link)`
+  position: relative;
   flex-basis: 76px;
   border-radius: 26px;
-  border: 1px solid black;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 115%;
   letter-spacing: -0.05px;
-  color: inherit;
   padding: 11px 28px 17px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+`
+
+export const WorkoutItem = styled(WorkoutItemBase)`
+  border: 1px solid black;
+  color: black;
+`
+
+export const WorkoutItemFull = styled(WorkoutItemBase)`
+  border: 1px solid #06b16e;
+  color: #06b16e;
+
+  ::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 26px;
+    background-image: url(/images/icons/check.svg);
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 8px;
+  }
 `
