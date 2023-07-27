@@ -53,21 +53,31 @@ export const ModalWorkout = ({ onClose, cardId }) => {
     return userSum === exerciseSum
   }
 
-  function renderWorkoutItem(obj) {
-    const isSumEqual = checkSumEquality(obj)
 
+  function renderWorkoutItem(obj) {
+    const isSumEqual = checkSumEquality(obj);
+    const nameParts = obj.name.split('/');
+  
     if (isSumEqual) {
       return (
         <Styled.WorkoutItemFull to={`/account/${obj._id}`} key={obj._id}>
-          {obj.name}
+          {nameParts.map((part, index) => (
+            <span key={index} style={{ fontSize: index === 0 ? '20px' : '18px' }}>
+              {part}
+            </span>
+          ))}
         </Styled.WorkoutItemFull>
-      )
+      );
     } else {
       return (
         <Styled.WorkoutItem to={`/account/${obj._id}`} key={obj._id}>
-          {obj.name}
+          {nameParts.map((part, index) => (
+            <span key={index} style={{ fontSize: index === 0 ? '20px' : '18px' }}>
+              {part}
+            </span>
+          ))}
         </Styled.WorkoutItem>
-      )
+      );
     }
   }
 

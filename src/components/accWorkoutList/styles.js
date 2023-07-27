@@ -52,7 +52,7 @@ export const Scroll = styled.div`
   margin: 0 auto;
   padding-right: 24px;
   padding-left: 24px;
-  height: 450px;
+  height: 460px;
   overflow: auto;
 
   scrollbar-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.05);
@@ -86,19 +86,24 @@ const WorkoutItemBase = styled(Link)`
   letter-spacing: -0.05px;
   padding: 11px 28px 17px;
   display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   align-items: center;
   text-align: center;
+  flex-direction: column;
 `
 
 export const WorkoutItem = styled(WorkoutItemBase)`
   border: 1px solid black;
   color: black;
+  font-size: 20px;
 `
 
 export const WorkoutItemFull = styled(WorkoutItemBase)`
   border: 1px solid #06b16e;
   color: #06b16e;
+  font-size: 20px;
 
   ::before {
     content: '';
@@ -109,6 +114,6 @@ export const WorkoutItemFull = styled(WorkoutItemBase)`
     overflow: hidden;
     position: absolute;
     top: 10px;
-    right: 8px;
+    right: 4px;
   }
 `
