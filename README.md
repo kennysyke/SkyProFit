@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+Проект "Cайт фитнес тренировок" - приложение, в котором пользователи могут смотреть упражнения для тренировок и отслеживать свой прогресс.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Командный проект, написанный с помощью React и Redux.
+Стилизация компонентов осуществляется через Styled Components.
+В проекте для базы данных и авторизации использован Google Firebase.
+Настроены авторизация, protected routes.
 
-## Available Scripts
+Проект состоит из:
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Список курсов
+  На странице отображены все курсы, имеющиеся в базе данных. На странице работает пагинация.
+2. Описание курса 
+  По клику на выбранный курс неавторизованный пользователь или пользователь, не приобретавший данный курс, попадает на страницу, где может ознакомиться с его описанием.
+3. Страницы авторизации
+  На данной странице пользователь имеет возможность зарегистрироваться или войти в свой аккаунт.
+4. Мой профиль
+  На странице "Мой профиль" пользователь имеет возможность редактировать свой профиль (сменить логин и пароль). А также просматривать приобретенные курсы.
+  Интерфейс добавления курсов для конкретных пользователей со стороны фронтенда не предусмотрен. Подразумевается, что курсы будут добавлены администратором, функционал, который не реализуется в рамках этой курсовой. Поэтому курсы пользователю добавляются напрямую в БД.
+5. Выбор тренировки.
+  По клику на выбранную тренировку в своём профиле пользователь попадает на страницу, где может открывать материалы урока (видеоролики на YouTube).
+6. Страница видеоурока с упражнениями.
+   Например, если это тренировка по йоге, то пользователю необходимо сделать: наклоны вперед (10 повторений), наклоны назад (10 повторений) и поднятие ног, согнутых в коленях (5 повторений). Пользователь должен видеть эти задания и иметь возможность заполнить свой прогресс, а приложение должно уметь высчитывать, на сколько процентов пользователь справился с заданием. При выходе из аккаунта или перезагрузки страницы прогресс пользователя сохраняется.
